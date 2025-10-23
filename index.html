@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central 6º BBM - Prevenção</title>
     <style>
-        /* ESTILOS CSS - LAYOUT FINAL: FUNDO AZUL ESCURO e TEXTO LARANJA */
+        /* ESTILOS CSS - LAYOUT FINAL: ULTRA-COMPACTO E OTIMIZADO */
         
         body { 
             font-family: Arial, sans-serif; 
@@ -44,10 +44,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
             position: relative; 
             overflow: hidden; 
-
-            /* CONFIGURAÇÕES DE BRASÃO/IMAGEM DE FUNDO REMOVIDAS (Versão Obras-Primas) */
-            background-image: none;
-            opacity: 1; 
         }
         
         /* TÍTULO PRINCIPAL LARANJA */
@@ -63,25 +59,34 @@
             color: #666; 
         }
         
-        /* ESTILOS DE GRID E EMOJIS */
+        /* ESTILOS BASE DO GRID (Aplicado a todas as seções) */
         .link-grid { 
             display: grid; 
+            /* Padrão: 2 colunas com cartões de no mínimo 280px. */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            /* REDUÇÃO DE ESPAÇAMENTO */
-            gap: 15px; 
+            gap: 10px; 
             margin-top: 20px; 
             position: relative; 
             z-index: 1; 
         }
+        
+        /* REGRA DE REDISTRIBUIÇÃO PARA SEÇÕES COM MAIS ITENS */
+        /* Altera o grid para permitir 3 colunas em telas largas, otimizando o Cartório (4) e Secretaria (6) */
+        @media (min-width: 1200px) {
+            .category-title:has(+ .link-grid.three-column-grid) + .link-grid.three-column-grid {
+                /* Força colunas menores, permitindo 3 ou 4 em telas largas para economizar espaço vertical */
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
         .link-card { 
             background-color: #ffffff; 
             border: 1px solid #ddd; 
-            padding: 20px; 
+            padding: 15px; 
             border-radius: 8px; 
             text-align: center; 
             transition: transform 0.2s, box-shadow 0.2s;
-            /* REDUÇÃO DE ALTURA */
-            min-height: 100px;
+            min-height: 90px; /* Ultra-Compacto */
             z-index: 2; 
         }
         /* EFEITO HOVER LARANJA */
@@ -105,7 +110,7 @@
         /* ESTILO PARA OS EMOJIS */
         .icon { 
             font-size: 40px; 
-            margin-bottom: 8px; 
+            margin-bottom: 5px; 
         }
 
         /* TÍTULOS DE CATEGORIA LARANJA */
@@ -113,8 +118,7 @@
             border-bottom: 3px solid #FF5722; 
             padding-bottom: 8px; 
             margin-top: 40px; 
-            /* REDUÇÃO DE ESPAÇAMENTO */
-            margin-bottom: 15px; 
+            margin-bottom: 10px; /* Ultra-Compacto */
             font-size: 1.5em; 
             color: #FF5722; 
             font-weight: bold; 
@@ -132,7 +136,7 @@
         <p class="subtitle">Seção de Prevenção e Proteção Contra Incêndio - 6°BBM</p>
 
         <div class="category-title">Sistemas de Licenciamento</div>
-        <div class="link-grid">
+        <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://solcbm.rs.gov.br/solcbm/" target="_blank">
                     <span class="icon">💻</span> SOL - SISTEMA ONLINE DE LICENCIAMENTO
@@ -146,7 +150,7 @@
         </div>
         
         <div class="category-title">Apoio Técnico e Normas</div>
-        <div class="link-grid">
+        <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank">
                     <span class="icon">📜</span> Biblioteca de Legislação
@@ -160,7 +164,7 @@
         </div>
 
         <div class="category-title">CARTÓRIO</div>
-        <div class="link-grid">
+        <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/12xkp_53DO0Rcx7wUNHDeQmcqBOM824US" target="_blank">
                     <span class="icon">📝</span> Auto de Imposição de Penalidade
@@ -184,7 +188,7 @@
         </div>
 
         <div class="category-title">Secretaria</div>
-        <div class="link-grid">
+        <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank">
                     <span class="icon">🔢</span> Controle de Numeração Doc. SSeg
@@ -218,7 +222,7 @@
         </div>
         
         <div class="category-title">Vistorias</div>
-        <div class="link-grid">
+        <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1LKMZxZnEcEMK75BAhQy3aRb444lFBua3imTK4NRc7W0/edit?gid=784303649#gid=784303649" target="_blank">
                     <span class="icon">🚨</span> Vistorias Extraordinárias
