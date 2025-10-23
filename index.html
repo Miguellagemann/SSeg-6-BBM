@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central 6º BBM - Prevenção</title>
     <style>
-        /* ESTILOS CSS - NOVO LAYOUT AZUL E LARANJA */
-        /* DEFINIÇÃO DE CORES: Azul Primário (#005691) e Laranja Acento (#FF6600) */
+        /* ESTILOS CSS - NOVO LAYOUT: FUNDO AZUL e TEXTO LARANJA */
+        /* DEFINIÇÃO DE CORES: Azul Escuro (#00204A) e Laranja Fogo (#FF5722) */
         
         body { 
             font-family: Arial, sans-serif; 
-            background-color: #f4f4f4; /* Fundo cinza claro */
-            color: #333; 
+            background-color: #00204A; /* Fundo Azul Escuro Intenso */
+            color: #fff; /* Texto padrão branco */
             margin: 0; 
             padding-top: 50px; /* Espaço para a barra fixa */
         }
         
-        /* BARRA SUPERIOR AGORA AZUL */
+        /* BARRA SUPERIOR AZUL ESCURO */
         .header-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #005691; /* Azul Marinho */
+            background-color: #00204A; /* Azul Escuro Intenso */
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Sombra mais escura */
             z-index: 1000;
         }
         .header-title {
@@ -39,14 +39,14 @@
             max-width: 1000px; 
             margin: 20px auto; 
             padding: 25px; 
-            background-color: #fff; 
+            background-color: #fff; /* Fundo do container permanece branco para contraste */
             border-radius: 10px; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
         }
         
-        /* ESTILOS DE TÍTULOS E GRIDS */
+        /* TÍTULO PRINCIPAL LARANJA */
         h1 { 
-            color: #005691; /* Azul Marinho */
+            color: #FF5722; /* Laranja Fogo */
             text-align: center; 
             margin-bottom: 5px; 
         }
@@ -54,8 +54,10 @@
             text-align: center; 
             margin-bottom: 30px; 
             font-size: 1.1em; 
-            color: #666; 
+            color: #666; /* Mantém o cinza para subtítulo */
         }
+        
+        /* ESTILOS DE GRID E ÍCONES */
         .link-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -74,9 +76,9 @@
         /* EFEITO HOVER LARANJA */
         .link-card:hover { 
             transform: translateY(-5px); 
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-            background-color: #fff9f0; /* Fundo levemente laranja */
-            border-color: #FF6600; /* Borda laranja */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+            background-color: #fffaf0; /* Fundo levemente creme */
+            border-color: #FF5722; /* Borda Laranja */
         }
         .link-card a { 
             text-decoration: none; 
@@ -88,20 +90,20 @@
             justify-content: center; 
             height: 100%; 
         }
-        /* ÍCONES AZUIS */
+        /* ÍCONES LARANJA */
         .icon { 
             font-size: 40px; 
             margin-bottom: 8px; 
-            color: #005691; /* Azul Marinho */
+            color: #FF5722; /* Laranja Fogo */
         }
-        /* TÍTULOS DE CATEGORIA AZUIS COM LINHA AZUL */
+        /* TÍTULOS DE CATEGORIA LARANJA COM LINHA LARANJA */
         .category-title { 
-            border-bottom: 3px solid #005691; 
+            border-bottom: 3px solid #FF5722; 
             padding-bottom: 8px; 
             margin-top: 40px; 
             margin-bottom: 20px; 
             font-size: 1.5em; 
-            color: #005691; 
+            color: #FF5722; 
             font-weight: bold; 
         }
         /* FIM DOS ESTILOS CSS */
