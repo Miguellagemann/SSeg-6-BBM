@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central 6º BBM - Prevenção</title>
     <style>
-        /* ESTILOS CSS - NOVO LAYOUT: FUNDO AZUL e TEXTO LARANJA */
+        /* ESTILOS CSS - LAYOUT FINAL: FUNDO AZUL ESCURO, TEXTO LARANJA E IMAGEM DE FUNDO NO CABEÇALHO */
         /* DEFINIÇÃO DE CORES: Azul Escuro (#00204A) e Laranja Fogo (#FF5722) */
         
         body { 
@@ -16,17 +16,26 @@
             padding-top: 50px; /* Espaço para a barra fixa */
         }
         
-        /* BARRA SUPERIOR AZUL ESCURO */
+        /* BARRA SUPERIOR COM IMAGEM DE FUNDO */
         .header-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #00204A; /* Azul Escuro Intenso */
+            
+            /* Gradiente escuro (50% de opacidade) sobre a imagem para garantir a legibilidade do texto branco */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                              url('https://gestaodesegurancaprivada.com.br/wp-content/uploads/prevencao-e-combate-a-incendio.jpg');
+            
+            background-size: cover; /* A imagem cobre a área inteira */
+            background-repeat: no-repeat; /* A imagem não se repete */
+            background-position: center center; /* A imagem é centralizada */
+            background-color: #00204A; /* Cor de backup */
+
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Sombra mais escura */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
             z-index: 1000;
         }
         .header-title {
@@ -164,13 +173,5 @@
                 </a>
             </div>
             <div class="link-card">
-                <a href="https://drive.google.com/drive/u/0/folders/1Bi1T2D8iNCYQt6pDHVvRXHUM_A-27ejH" target="_blank">
-                    <span class="icon">🚫</span>
-                    Interdições
-                </a>
-            </div>
-        </div>
-
-    </div>
-</body>
-</html>
+                <a href="
+                    
