@@ -14,8 +14,35 @@
             color: #fff; /* Texto padrão branco */
             margin: 0; 
             padding-top: 50px; /* Espaço para a barra fixa */
+
+            /* NOVO: IMAGEM DE FUNDO (BRASÃO DO CBMRS) */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Brasao_cbmrs.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed; /* Fixa o brasão para não rolar com a página */
+            background-size: contain; /* Garante que o brasão caiba na tela */
+            opacity: 1; /* Mantém a opacidade do body em 1 */
         }
         
+        /* NOVO: Efeito de transparência sutil no brasão */
+        /* Criamos um pseudo-elemento para controlar a opacidade da imagem de fundo sem afetar o texto */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Brasao_cbmrs.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: contain;
+            opacity: 0.1; /* OPACIDADE BAIXA PARA DEIXAR A IMAGEM SUTIL */
+            z-index: -1; /* Coloca a imagem atrás de todo o conteúdo */
+        }
+
+
         /* BARRA SUPERIOR COM COR SÓLIDA LARANJA FOGO */
         .header-bar {
             position: fixed;
@@ -38,14 +65,13 @@
         }
 
         .container { 
-            /* ALTERADO: Definindo a largura para 100% da tela menos 6cm (3cm de cada lado) */
+            /* Largura para deixar ~3cm de borda azul de cada lado */
             width: calc(100vw - 6cm); 
-            margin: 20px auto; /* Mantém centralizado e com margem superior/inferior */
+            margin: 20px auto; 
             padding: 25px; 
             background-color: #fff; /* Fundo do container permanece branco para contraste */
             border-radius: 10px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-            /* Removido o max-width para que a largura calculada seja aplicada */
         }
         
         /* TÍTULO PRINCIPAL LARANJA */
