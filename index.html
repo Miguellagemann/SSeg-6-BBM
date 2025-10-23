@@ -16,14 +16,16 @@
             padding-top: 50px; /* Espaço para a barra fixa */
         }
         
-        /* BARRA SUPERIOR SEM IMAGEM, COM COR SÓLIDA AZUL ESCURO */
+        /* BARRA SUPERIOR COM COR SÓLIDA AZUL ESCURO */
         .header-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             
+            /* CABEÇALHO COM COR SÓLIDA */
             background-color: #00204A; /* Azul Escuro Intenso */
+            /* Imagem de fundo removida */
 
             color: #fff;
             padding: 10px 0;
@@ -92,12 +94,24 @@
             justify-content: center; 
             height: 100%; 
         }
-        /* ÍCONES LARANJA (mantidos como pontos vazios/espaço, mas a cor laranja continua) */
+
+        /* NOVO ESTILO PARA A IMAGEM DE ÍCONE */
+        .icon-img {
+            width: 45px; /* Tamanho do ícone */
+            height: 45px;
+            margin-bottom: 8px;
+            display: block; /* Garante que a imagem se centre corretamente */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* O estilo .icon original permanece para os links que não tem imagem */
         .icon { 
             font-size: 40px; 
             margin-bottom: 8px; 
-            color: #FF5722; /* Laranja Fogo */
+            color: #FF5722; 
         }
+
         /* TÍTULOS DE CATEGORIA LARANJA COM LINHA LARANJA */
         .category-title { 
             border-bottom: 3px solid #FF5722; 
@@ -139,7 +153,7 @@
         <div class="link-grid">
             <div class="link-card">
                 <a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank">
-                    <span class="icon"></span>
+                    <img src="https://procon.pb.gov.br/imagens/legislacao.png/view" alt="Ícone Legislação" class="icon-img">
                     Biblioteca de Legislação
                 </a>
             </div>
