@@ -46,11 +46,12 @@
             overflow: hidden; 
         }
         
-        /* TÍTULO PRINCIPAL LARANJA */
+        /* TÍTULO PRINCIPAL LARANJA (CHAMATIVO) */
         h1 { 
-            color: #FF5722; /* Laranja Fogo */
+            color: #FF5722; /* Laranja Fogo Forte */
             text-align: center; 
             margin-bottom: 5px; 
+            font-size: 2.2em; /* Mantido grande para impacto */
         }
         .subtitle { 
             text-align: center; 
@@ -59,10 +60,9 @@
             color: #666; 
         }
         
-        /* ESTILOS BASE DO GRID (Aplicado a todas as seções) */
+        /* ESTILOS DE GRID E EMOJIS */
         .link-grid { 
             display: grid; 
-            /* Padrão: 2 colunas com cartões de no mínimo 280px. */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 10px; 
             margin-top: 20px; 
@@ -70,8 +70,7 @@
             z-index: 1; 
         }
         
-        /* REGRA DE REDISTRIBUIÇÃO PARA SEÇÕES COM MAIS ITENS */
-        /* Altera o grid para permitir 3 colunas em telas largas, otimizando o Cartório (4) e Secretaria (6) */
+        /* REGRA DE REDISTRIBUIÇÃO PARA SEÇÕES COM MAIS ITENS (Para telas largas) */
         @media (min-width: 1200px) {
             .category-title:has(+ .link-grid.three-column-grid) + .link-grid.three-column-grid {
                 /* Força colunas menores, permitindo 3 ou 4 em telas largas para economizar espaço vertical */
@@ -107,7 +106,7 @@
             height: 100%; 
         }
 
-        /* ESTILO PARA OS EMOJIS */
+        /* ESTILO PARA OS EMOJIS (Ícones dos cards) */
         .icon { 
             font-size: 40px; 
             margin-bottom: 5px; 
