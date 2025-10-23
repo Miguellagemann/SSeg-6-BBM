@@ -5,12 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central 6º BBM - Prevenção</title>
     <style>
-        /* ESTILOS CSS */
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; margin: 20px; }
-        .container { max-width: 1000px; margin: auto; padding: 25px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
-        h1 { color: #cc0000; text-align: center; margin-bottom: 5px; }
-        .subtitle { text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #666; }
-        .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        /* ESTILOS CSS - LAYOUT CBMRS */
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; /* Fundo cinza claro */
+            color: #333; 
+            margin: 0; 
+            padding-top: 50px; /* Espaço para a barra fixa */
+        }
+        
+        /* BARRA SUPERIOR VERMELHA FIXA (SIMULANDO O SITE OFICIAL) */
+        .header-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #C20C1F; /* Vermelho do CBMRS */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .header-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .container { 
+            max-width: 1000px; 
+            margin: 20px auto; 
+            padding: 25px; 
+            background-color: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+        }
+        
+        /* ESTILOS DE TÍTULOS E GRIDS */
+        h1 { 
+            color: #C20C1F; 
+            text-align: center; 
+            margin-bottom: 5px; 
+        }
+        .subtitle { 
+            text-align: center; 
+            margin-bottom: 30px; 
+            font-size: 1.1em; 
+            color: #666; 
+        }
+        .link-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-top: 20px; 
+        }
         .link-card { 
             background-color: #ffffff; 
             border: 1px solid #ddd; 
@@ -20,14 +69,42 @@
             transition: transform 0.2s, box-shadow 0.2s;
             min-height: 120px;
         }
-        .link-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #fff0f0; }
-        .link-card a { text-decoration: none; color: #333; font-weight: bold; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; }
-        .icon { font-size: 40px; margin-bottom: 8px; color: #cc0000; }
-        .category-title { border-bottom: 3px solid #cc0000; padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; font-size: 1.5em; color: #cc0000; font-weight: bold; }
+        .link-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+            background-color: #fff0f0; 
+        }
+        .link-card a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: bold; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100%; 
+        }
+        .icon { 
+            font-size: 40px; 
+            margin-bottom: 8px; 
+            color: #C20C1F; /* Vermelho CBMRS */
+        }
+        .category-title { 
+            border-bottom: 3px solid #C20C1F; 
+            padding-bottom: 8px; 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            font-size: 1.5em; 
+            color: #C20C1F; 
+            font-weight: bold; 
+        }
         /* FIM DOS ESTILOS CSS */
     </style>
 </head>
 <body>
+    <div class="header-bar">
+        <p class="header-title">CORPO DE BOMBEIROS MILITAR DO RIO GRANDE DO SUL</p>
+    </div>
     <div class="container">
         <h1>🚨 CENTRAL DE ACESSOS RÁPIDOS 🚒</h1>
         <p class="subtitle">Seção de Prevenção e Proteção Contra Incêndio - 6°BBM</p>
@@ -46,6 +123,20 @@
                     SISBOM - Sistema Integrado
                 </a>
             </div>
+            <div class="link-card">
+                <a href="**COLE O LINK DO PAINEL DE PROCESSOS AQUI**" target="_blank">
+                    <span class="icon">📊</span>
+                    Painel de Processos (Planilha Online)
+                </a>
+            </div>
+            <div class="link-card">
+                <a href="**COLE O LINK DE CONSULTA DE LICENÇAS AQUI**" target="_blank">
+                    <span class="icon">📄</span>
+                    Consulta de Licenças Públicas
+                </a>
+            </div>
+        </div>
+        
         <div class="category-title">Apoio Técnico e Normas</div>
         <div class="link-grid">
             <div class="link-card">
@@ -54,6 +145,20 @@
                     Biblioteca de Legislação
                 </a>
             </div>
+            <div class="link-card">
+                <a href="**COLE O LINK DA CALCULADORA AQUI**" target="_blank">
+                    <span class="icon">🧮</span>
+                    Calculadora Carga de Incêndio
+                </a>
+            </div>
+            <div class="link-card">
+                <a href="**COLE O LINK DOS MODELOS DE LAUDOS AQUI**" target="_blank">
+                    <span class="icon">📝</span>
+                    Modelos de Laudos e Documentos
+                </a>
+            </div>
+        </div>
+
         <div class="category-title">CARTÓRIO</div>
         <div class="link-grid">
             <div class="link-card">
