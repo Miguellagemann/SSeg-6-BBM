@@ -48,19 +48,22 @@
             overflow: hidden; 
         }
         
-        /* TÍTULO PRINCIPAL VERMELHO */
+        /* TÍTULO PRINCIPAL VERMELHO E NEGRITO */
         h1 { 
             /* COR DE DESTAQUE: VERMELHO BOMBEIRO */
             color: #CC0000; 
             text-align: center; 
             margin-bottom: 5px; 
             font-size: 2.2em; 
+            font-weight: bold; 
         }
+        /* SUBTÍTULO EM NEGRITO */
         .subtitle { 
             text-align: center; 
             margin-bottom: 30px; 
             font-size: 1.1em; 
             color: #666; 
+            font-weight: bold; 
         }
         
         /* ESTILOS DE GRID E EMOJIS */
@@ -117,7 +120,7 @@
             margin-bottom: 5px; 
         }
 
-        /* TÍTULOS DE CATEGORIA VERMELHOS */
+        /* TÍTULOS DE CATEGORIA VERMELHOS E NEGRITO */
         .category-title { 
             /* LINHA DE DIVISÃO: VERMELHO BOMBEIRO */
             border-bottom: 3px solid #CC0000; 
@@ -130,6 +133,20 @@
             font-weight: bold; 
             position: relative; 
             z-index: 1;
+        }
+
+        /* FRASE DE IMPACTO NO RODAPÉ DO CONTAINER */
+        .impact-phrase {
+            text-align: center;
+            /* Cor de destaque: Vermelho Bombeiro */
+            color: #CC0000; 
+            font-style: italic;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 40px;
+            padding-top: 10px;
+            /* Linha sutil para separar do conteúdo */
+            border-top: 1px solid #ddd; 
         }
     </style>
 </head>
@@ -169,7 +186,7 @@
             </div>
         </div>
 
-        <div class="category-title">CARTÓRIO</div>
+        <div class="category-title">Cartório</div>
         <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/12xkp_53DO0Rcx7wUNHDeQmcqBOM824US" target="_blank">
@@ -240,6 +257,8 @@
                 </a>
             </div>
         </div>
+        
+        <p class="impact-phrase">"O incêndio ocorre onde a prevenção falha"</p>
 
     </div>
 </body>
