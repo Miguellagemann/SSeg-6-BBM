@@ -16,21 +16,21 @@
             padding-top: 50px; /* Espaço para a barra fixa */
         }
         
-        /* BARRA SUPERIOR COM COR SÓLIDA AZUL ESCURO */
+        /* BARRA SUPERIOR COM COR SÓLIDA LARANJA FOGO */
         .header-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             
-            /* CABEÇALHO COM COR SÓLIDA */
-            background-color: #00204A; /* Azul Escuro Intenso */
-            /* Imagem de fundo removida */
+            /* ALTERADO: Fundo agora é Laranja Fogo */
+            background-color: #FF5722; 
 
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+            /* Sombra escura para destacar na página */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); 
             z-index: 1000;
         }
         .header-title {
@@ -61,7 +61,7 @@
             color: #666; /* Mantém o cinza para subtítulo */
         }
         
-        /* ESTILOS DE GRID E ÍCONES */
+        /* ESTILOS DE GRID E EMOJIS */
         .link-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -95,21 +95,10 @@
             height: 100%; 
         }
 
-        /* NOVO ESTILO PARA A IMAGEM DE ÍCONE */
-        .icon-img {
-            width: 45px; /* Tamanho do ícone */
-            height: 45px;
-            margin-bottom: 8px;
-            display: block; /* Garante que a imagem se centre corretamente */
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* O estilo .icon original permanece para os links que não tem imagem */
+        /* ESTILO PARA OS EMOJIS (TAMANHO E MARGEM) */
         .icon { 
-            font-size: 40px; 
+            font-size: 40px; /* Grande para destacar o emoji */
             margin-bottom: 8px; 
-            color: #FF5722; 
         }
 
         /* TÍTULOS DE CATEGORIA LARANJA COM LINHA LARANJA */
@@ -136,57 +125,4 @@
         <div class="category-title">Sistemas de Licenciamento</div>
         <div class="link-grid">
             <div class="link-card">
-                <a href="https://solcbm.rs.gov.br/solcbm/" target="_blank">
-                    <span class="icon"></span>
-                    SOL - SISTEMA ONLINE DE LICENCIAMENTO
-                </a>
-            </div>
-            <div class="link-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/scs/" target="_blank">
-                    <span class="icon"></span>
-                    SISBOM - Sistema Integrado
-                </a>
-            </div>
-        </div>
-        
-        <div class="category-title">Apoio Técnico e Normas</div>
-        <div class="link-grid">
-            <div class="link-card">
-                <a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank">
-                    <img src="https://procon.pb.gov.br/imagens/legislacao.png/view" alt="Ícone Legislação" class="icon-img">
-                    Biblioteca de Legislação
-                </a>
-            </div>
-            <div class="link-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/2k16/sistema/nucleobase/webpadwebsite/principal/simulacao_delegaacao.php?gAcao=0" target="_blank">
-                    <span class="icon"></span>
-                    Simulador de Taxas CBMRS
-                </a>
-            </div>
-        </div>
-
-        <div class="category-title">CARTÓRIO</div>
-        <div class="link-grid">
-            <div class="link-card">
-                <a href="https://drive.google.com/drive/u/0/folders/12xkp_53DO0Rcx7wUNHDeQmcqBOM824US" target="_blank">
-                    <span class="icon"></span>
-                    Auto de Imposição de Penalidade
-                </a>
-            </div>
-            <div class="link-card">
-                <a href="https://drive.google.com/drive/u/0/folders/1qk1bwE_ToynCFTjQmECmBn6FP_leXt53" target="_blank">
-                    <span class="icon"></span>
-                    Ofícios
-                </a>
-            </div>
-            <div class="link-card">
-                <a href="https://drive.google.com/drive/u/0/folders/1Bi1T2D8iNCYQt6pDHVvRXHUM_A-27ejH" target="_blank">
-                    <span class="icon"></span>
-                    Interdições
-                </a>
-            </div>
-        </div>
-
-    </div>
-</body>
-</html>
+                
