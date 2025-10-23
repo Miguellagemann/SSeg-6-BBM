@@ -38,13 +38,14 @@
         }
 
         .container { 
-            /* ALTERADO: Aumentando a largura máxima para 1200px */
-            max-width: 1200px; /* Isso deixará a área dos links maior */
-            margin: 20px auto; 
+            /* ALTERADO: Definindo a largura para 100% da tela menos 6cm (3cm de cada lado) */
+            width: calc(100vw - 6cm); 
+            margin: 20px auto; /* Mantém centralizado e com margem superior/inferior */
             padding: 25px; 
             background-color: #fff; /* Fundo do container permanece branco para contraste */
             border-radius: 10px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+            /* Removido o max-width para que a largura calculada seja aplicada */
         }
         
         /* TÍTULO PRINCIPAL LARANJA */
@@ -63,7 +64,6 @@
         /* ESTILOS DE GRID E EMOJIS */
         .link-grid { 
             display: grid; 
-            /* Aumente o minmax aqui se quiser que os cards também fiquem maiores na largura */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 20px; 
             margin-top: 20px; 
