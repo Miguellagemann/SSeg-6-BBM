@@ -6,25 +6,22 @@
     <title>Central 6º BBM - Prevenção</title>
     <style>
         /* ESTILOS CSS - LAYOUT FINAL: FUNDO AZUL ESCURO e TEXTO LARANJA */
-        /* DEFINIÇÃO DE CORES: Azul Escuro (#00204A) e Laranja Fogo (#FF5722) */
         
         body { 
             font-family: Arial, sans-serif; 
             background-color: #00204A; /* Fundo Azul Escuro Intenso */
-            color: #fff; /* Texto padrão branco */
+            color: #fff; 
             margin: 0; 
-            padding-top: 50px; /* Espaço para a barra fixa */
+            padding-top: 50px; 
         }
         
-        /* BARRA SUPERIOR COM COR SÓLIDA LARANJA FOGO */
+        /* BARRA SUPERIOR LARANJA */
         .header-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            
             background-color: #FF5722; /* Laranja Fogo */
-
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -38,23 +35,19 @@
         }
 
         .container { 
-            /* Largura para borda de ~3cm de cada lado (100vw - 6cm) */
+            /* Borda de ~3cm de cada lado (100vw - 6cm) */
             width: calc(100vw - 6cm); 
             margin: 20px auto; 
             padding: 25px; 
-            background-color: #fff; /* Fundo do container permanece branco para contraste */
+            background-color: #fff; /* Fundo do container permanece branco */
             border-radius: 10px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
             position: relative; 
             overflow: hidden; 
 
-            /* BRASÃO DE FUNDO NO CONTAINER (BASE64) - Garante o aparecimento */
-            /* CÓDIGO BASE64 DO BRASÃO DO CBMRS (Versão PNG) */
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOIAAACICAYAAAAeG5f4AAAgAElEQVR4Xu2deVBUVdrHx+4M7yYgIIRKkKz3vj3u1iIiiOAG/qO+914TUUxETUTxV0wUE81NQUVUVFRUVFRP3cR9o4iIiCKiKCgOgoIKXy8XmBll55x78t5n5v1Bdpj3fud79555cO+71lrLd2211VL//vWv/1Gv2rX9uK51/w7VatV/99f/L0W7R47Vj/q1T1K7fN/91f+r4t2nN1W2d/72t1S/fL93b7S8+5/r27/1X/7zP36Y3F9w9b/h49/71v+31b3/z/8x/vP/5/9e3f+P7/2v/3/w/+0Vb7/7X//Wf/30P/i1/17f/V//P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j+f/1/8P1//v+f/2/9H/9d/9P/9f/h+/7Vf/+v/33/2t/9r3/6//j
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: 40%; /* Tamanho sutil (40% do contêiner) */
-            opacity: 0.08; /* Opacidade bem baixa (8%) para marca d'água */
+            /* CONFIGURAÇÕES DO BRASÃO REMOVIDAS PARA ESTABILIDADE DO LAYOUT */
+            background-image: none;
+            opacity: 1; 
         }
         
         /* TÍTULO PRINCIPAL LARANJA */
@@ -67,7 +60,7 @@
             text-align: center; 
             margin-bottom: 30px; 
             font-size: 1.1em; 
-            color: #666; /* Mantém o cinza para subtítulo */
+            color: #666; 
         }
         
         /* ESTILOS DE GRID E EMOJIS */
@@ -93,8 +86,8 @@
         .link-card:hover { 
             transform: translateY(-5px); 
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-            background-color: #fffaf0; /* Fundo levemente creme */
-            border-color: #FF5722; /* Borda Laranja */
+            background-color: #fffaf0; 
+            border-color: #FF5722; 
         }
         .link-card a { 
             text-decoration: none; 
@@ -107,13 +100,13 @@
             height: 100%; 
         }
 
-        /* ESTILO PARA OS EMOJIS (TAMANHO E MARGEM) */
+        /* ESTILO PARA OS EMOJIS */
         .icon { 
             font-size: 40px; 
             margin-bottom: 8px; 
         }
 
-        /* TÍTULOS DE CATEGORIA LARANJA COM LINHA LARANJA */
+        /* TÍTULOS DE CATEGORIA LARANJA */
         .category-title { 
             border-bottom: 3px solid #FF5722; 
             padding-bottom: 8px; 
@@ -125,7 +118,6 @@
             position: relative; 
             z-index: 1;
         }
-        /* FIM DOS ESTILOS CSS */
     </style>
 </head>
 <body>
