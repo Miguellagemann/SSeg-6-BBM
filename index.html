@@ -34,66 +34,66 @@
             z-index: 1000;
         }
         .header-title {
-            font-size: 1.2em;
+            /* Fonte levemente reduzida */
+            font-size: 1.1em; 
             font-weight: bold;
             margin: 0;
         }
 
         .container { 
-            /* Para replicar o espaçamento lateral da intranet */
+            /* REVERTIDO: Container com largura máxima ampla (1200px) */
             max-width: 1200px; 
             margin: 20px auto; 
-            padding: 25px; 
-            /* Fundo principal do container: Branco (como na maioria das páginas internas) */
+            padding: 20px; /* Conteúdo interno com padding reduzido */
+            /* Fundo principal do container: Branco */
             background-color: #fff; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
             position: relative; 
             overflow: hidden; 
         }
         
         /* TÍTULO PRINCIPAL */
         h1 { 
-            /* COR DE DESTAQUE: VERMELHO BOMBEIRO */
+            /* REDUÇÃO: Tamanho da fonte do título principal */
+            font-size: 2.0em; 
             color: #CC0000; 
             text-align: center; 
-            margin-bottom: 30px; 
-            font-size: 2.2em; 
+            margin-bottom: 25px; 
             font-weight: bold; 
-            /* EFEITO DE SOMBRA para simular o BRILHO/LARANJA do seu logo/título */
             text-shadow: 0 0 8px rgba(255, 100, 0, 0.5); 
         }
         
         /* ESTILOS DE GRID E ÍCONES */
         .link-grid { 
-            /* PADRÃO: Tenta preencher a linha com cartões de no mínimo 280px de largura */
+            /* PADRÃO: Tenta preencher a linha com cartões de no mínimo 250px de largura */
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
             gap: 10px; 
-            margin-top: 20px; 
+            margin-top: 15px; 
             position: relative; 
             z-index: 1; 
         }
         
         /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório) */
-        @media (min-width: 900px) {
+        @media (min-width: 700px) {
             .link-grid.optimized-columns {
                 grid-template-columns: repeat(3, 1fr); /* Força no máximo 3 colunas em telas médias */
-                gap: 15px; 
+                gap: 10px; 
             }
         }
-        @media (min-width: 1200px) {
+        @media (min-width: 900px) { 
             .link-grid.optimized-columns {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Permite até 5 ou 6 em telas muito largas */
-                gap: 10px;
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Permite mais colunas em telas grandes */
+                gap: 8px; 
             }
         }
         
         /* ESTILO: FORÇA 7 COLUNAS EM UMA ÚNICA LINHA (Chefe da SSeg) */
         .link-grid.single-line-grid {
-            /* Força 7 colunas no layout principal (acima de 900px) */
+            /* Força 7 colunas */
             grid-template-columns: repeat(7, 1fr); 
-            gap: 8px; /* Espaçamento menor para caber */
+            gap: 5px; 
         }
         /* Ajuste para telas menores: Volta para 3 colunas para evitar quebra feia */
         @media (max-width: 900px) {
@@ -101,84 +101,62 @@
                 grid-template-columns: repeat(3, 1fr); 
             }
         }
-        @media (min-width: 1200px) {
-            .link-grid.single-line-grid {
-                /* Garante que, se a tela for muito larga, ele use 7 colunas forçadas */
-                grid-template-columns: repeat(7, 1fr);
-            }
-        }
         
-
         /* ESTILOS ESPECÍFICOS PARA CARDS */
         .link-grid.pelotao-grid {
-            /* Permite mais colunas em telas médias/grandes (até 6 cards por linha em tela cheia) */
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
-            gap: 8px; /* Espaçamento menor */
-            
-            /* REMOVE ESPAÇO SUPERIOR PARA GRUDAR NO SUBTÍTULO */
+            /* Permite mais colunas em telas médias/grandes */
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+            gap: 5px; 
             margin-top: 5px; 
         }
         
         .link-card { 
             background-color: #ffffff; 
             border: 1px solid #ddd; 
-            padding: 15px; 
-            border-radius: 8px; 
+            padding: 10px; /* REDUÇÃO: Padding interno do card */
+            border-radius: 6px; 
             text-align: center; 
             transition: transform 0.2s, box-shadow 0.2s;
-            min-height: 90px; 
+            min-height: 75px; /* REDUÇÃO: Altura mínima do card */
             z-index: 2; 
         }
 
         /* Ajuste para o cartão de pelotão */
         .link-card.pelotao-card {
-            min-height: 50px; /* Cartão menor */
-            padding: 10px;
+            min-height: 40px; 
+            padding: 8px; 
         }
 
-        /* EFEITO HOVER VERMELHO/BORDA */
-        .link-card:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
-            background-color: #FFEEF0; 
-            border-color: #CC0000; 
-        }
         .link-card a { 
             text-decoration: none; 
             color: #333; 
             font-weight: bold; 
+            font-size: 0.9em; /* Fonte levemente menor */
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
             height: 100%; 
         }
-
-        /* Esconde o ícone grande nos cards de pelotão para caber só o texto */
         .link-card.pelotao-card a {
-            font-size: 0.9em; /* Fonte um pouco menor */
-        }
-        .link-card.pelotao-card .icon {
-            display: none; 
+            font-size: 0.8em; /* Fonte ainda menor para pelotões */
         }
         
         /* ESTILO PARA OS ÍCONES (Font Awesome) - Cores da Brigada */
         .icon { 
-            font-size: 40px; 
+            font-size: 30px; /* REDUÇÃO: Tamanho dos ícones */
             margin-bottom: 5px; 
-            /* ÍCONES: AZUL NAVAL */
             color: #003366; 
         }
 
         /* TÍTULOS DE CATEGORIA (Similares aos títulos sublinhados em suas imagens) */
         .category-title { 
             /* LINHA DE DIVISÃO: VERMELHO BOMBEIRO */
-            border-bottom: 3px solid #CC0000; 
-            padding-bottom: 8px; 
-            margin-top: 40px; 
-            margin-bottom: 10px; 
-            font-size: 1.5em; 
-            /* COR DO TEXTO: VERMELHO BOMBEIRO */
+            border-bottom: 2px solid #CC0000; 
+            padding-bottom: 5px; 
+            margin-top: 30px; 
+            margin-bottom: 8px; 
+            font-size: 1.3em; /* REDUÇÃO: Tamanho da fonte do título de categoria */
             color: #CC0000; 
             font-weight: bold; 
             position: relative; 
@@ -187,15 +165,11 @@
         
         /* Título para os agrupamentos de Pelotões */
         .sub-category-title {
-            /* Cor mais suave para subtítulos */
             color: #003366; 
-            font-size: 1.1em;
+            font-size: 1.0em; 
             font-weight: bold;
-            margin-top: 15px;
-            
-            /* ZERA O ESPAÇO INFERIOR PARA GRUDAR NO GRID */
+            margin-top: 10px; 
             margin-bottom: 0px; 
-            
             text-align: left;
             width: 100%;
         }
@@ -206,9 +180,9 @@
             color: #CC0000; 
             font-style: italic;
             font-weight: bold;
-            font-size: 1.1em;
-            margin-top: 40px;
-            padding-top: 10px;
+            font-size: 1.0em; 
+            margin-top: 30px; 
+            padding-top: 8px;
             border-top: 1px solid #ddd; 
             text-shadow: 0 0 5px rgba(255, 165, 0, 0.7); 
         }
