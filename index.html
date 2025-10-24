@@ -75,7 +75,7 @@
             z-index: 1; 
         }
         
-        /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório), 
+        /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria, Cartório e agora Chefe da SSeg), 
            permite que os cartões fiquem menores em telas mais largas para evitar quebras indesejadas */
         @media (min-width: 900px) {
             .link-grid.optimized-columns {
@@ -140,6 +140,14 @@
             display: none; 
         }
         
+        /* ESTILO PARA OS ÍCONES (Font Awesome) - Cores da Brigada */
+        .icon { 
+            font-size: 40px; 
+            margin-bottom: 5px; 
+            /* ÍCONES: AZUL NAVAL */
+            color: #003366; 
+        }
+
         /* TÍTULOS DE CATEGORIA (Similares aos títulos sublinhados em suas imagens) */
         .category-title { 
             /* LINHA DE DIVISÃO: VERMELHO BOMBEIRO */
@@ -251,20 +259,40 @@
         </div>
         
         <div class="category-title">Chefe da SSeg</div>
-        <div class="link-grid">
+        <div class="link-grid optimized-columns">
             <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1-swdoWtzm9xaaVy6McltmWna7SGES3imAP0IMay41Tg/edit?gid=1568785467#gid=1568785467" target="_blank">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span> Extração de dados - SOL
+                <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=797867071#gid=797867071" target="_blank">
+                    <span class="icon"><i class="fas fa-hammer"></i></span> Inviabilidades Técnicas
                 </a>
             </div>
             <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=280352508#gid=280352508" target="_blank"> 
-                    <span class="icon"><i class="fas fa-chart-line"></i></span> Extração de dados - SISBOM 
+                <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=903472996#gid=903472996" target="_blank"> 
+                    <span class="icon"><i class="fas fa-file-invoice"></i></span> FACT
                 </a>
             </div>
             <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=2016732584#gid=2016732584" target="_blank"> 
-                    <span class="icon"><i class="fas fa-clock"></i></span> Pendentes de Homologação
+                <a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=1496996475#gid=1496996475" target="_blank"> 
+                    <span class="icon"><i class="fas fa-comments"></i></span> Consultas Técnicas 
+                </a>
+            </div>
+            <div class="link-card">
+                <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1868236574#gid=1868236574" target="_blank"> 
+                    <span class="icon"><i class="fas fa-undo"></i></span> Recursos Análises
+                </a>
+            </div>
+            <div class="link-card">
+                <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1482669118#gid=1482669118" target="_blank"> 
+                    <span class="icon"><i class="fas fa-undo-alt"></i></span> Recursos de Vistorias
+                </a>
+            </div>
+            <div class="link-card">
+                <a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761#gid=1156634761" target="_blank"> 
+                    <span class="icon"><i class="fas fa-gavel"></i></span> Defesas Administrativas
+                </a>
+            </div>
+            <div class="link-card">
+                <a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=465741332#gid=465741332" target="_blank"> 
+                    <span class="icon"><i class="fas fa-list-ol"></i></span> Recursos Administrativos
                 </a>
             </div>
         </div>
