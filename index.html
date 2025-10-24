@@ -66,6 +66,7 @@
         
         /* ESTILOS DE GRID E ÍCONES */
         .link-grid { 
+            /* PADRÃO: Tenta preencher a linha com cartões de no mínimo 280px de largura */
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 10px; 
@@ -74,11 +75,22 @@
             z-index: 1; 
         }
         
-        @media (min-width: 1200px) {
-            .category-title:has(+ .link-grid.three-column-grid) + .link-grid.three-column-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório), 
+           permitimos que os cartões fiquem menores em telas mais largas (max 1200px), 
+           garantindo que 3 itens caibam facilmente e evitem quebras indesejadas */
+        @media (min-width: 900px) {
+            .link-grid.optimized-columns {
+                grid-template-columns: repeat(3, 1fr); /* Força no máximo 3 colunas */
+                gap: 15px; /* Aumenta um pouco o espaçamento para centralizar melhor em 3 colunas */
             }
         }
+        @media (min-width: 1200px) {
+            .link-grid.optimized-columns {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Permite até 5 ou 6 em telas muito largas */
+                gap: 10px;
+            }
+        }
+
 
         .link-card { 
             background-color: #ffffff; 
@@ -152,7 +164,7 @@
     <div class="container">
         <h1>CENTRAL DE ACESSOS RÁPIDOS</h1>
         <div class="category-title">Sistemas de Licenciamento</div>
-        <div class="link-grid three-column-grid">
+        <div class="link-grid">
             <div class="link-card">
                 <a href="https://solcbm.rs.gov.br/solcbm/" target="_blank">
                     <span class="icon"><i class="fas fa-desktop"></i></span> SOL - SISTEMA ONLINE DE LICENCIAMENTO
@@ -166,7 +178,7 @@
         </div>
         
         <div class="category-title">Chefe da SSeg</div>
-        <div class="link-grid three-column-grid">
+        <div class="link-grid">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1-swdoWtzm9xaaVy6McltmWna7SGES3imAP0IMay41Tg/edit?gid=1568785467#gid=1568785467" target="_blank">
                     <span class="icon"><i class="fas fa-chart-line"></i></span> Extração de dados - SOL
@@ -175,7 +187,7 @@
         </div>
         
         <div class="category-title">Apoio Técnico e Normas</div>
-        <div class="link-grid three-column-grid">
+        <div class="link-grid">
             <div class="link-card">
                 <a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank">
                     <span class="icon"><i class="fas fa-scroll"></i></span> Biblioteca de Legislação
@@ -189,7 +201,7 @@
         </div>
 
         <div class="category-title">Secretaria</div>
-        <div class="link-grid three-column-grid">
+        <div class="link-grid optimized-columns">
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank">
                     <span class="icon"><i class="fas fa-hashtag"></i></span> Controle de Numeração Doc. SSeg
@@ -223,7 +235,7 @@
         </div>
         
         <div class="category-title">Cartório</div>
-        <div class="link-grid three-column-grid">
+        <div class="link-grid optimized-columns">
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/12xkp_53DO0Rcx7wUNHDeQmcqBOM824US" target="_blank">
                     <span class="icon"><i class="fas fa-pen-to-square"></i></span> Auto de Imposição de Penalidade
@@ -252,7 +264,7 @@
         </div>
         
         <div class="category-title">Vistorias</div>
-        <div class="link-grid three-column-grid">
+        <div class="link-grid">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1LKMZxZnEcEMK75BAhQy3aRb444lFBua3imTK4NRc7W0/edit?gid=784303649#gid=784303649" target="_blank">
                     <span class="icon"><i class="fas fa-fire-extinguisher"></i></span> Vistorias Extraordinárias
