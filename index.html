@@ -76,8 +76,7 @@
         }
         
         /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório), 
-           permitimos que os cartões fiquem menores em telas mais largas (max 1200px), 
-           garantindo que 3 itens caibam facilmente e evitem quebras indesejadas */
+           permite que os cartões fiquem menores em telas mais largas para evitar quebras indesejadas */
         @media (min-width: 900px) {
             .link-grid.optimized-columns {
                 grid-template-columns: repeat(3, 1fr); /* Força no máximo 3 colunas */
@@ -163,6 +162,7 @@
     </div>
     <div class="container">
         <h1>CENTRAL DE ACESSOS RÁPIDOS</h1>
+
         <div class="category-title">Sistemas de Licenciamento</div>
         <div class="link-grid">
             <div class="link-card">
@@ -186,20 +186,6 @@
             </div>
         </div>
         
-        <div class="category-title">Apoio Técnico e Normas</div>
-        <div class="link-grid">
-            <div class="link-card">
-                <a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank">
-                    <span class="icon"><i class="fas fa-scroll"></i></span> Biblioteca de Legislação
-                </a>
-            </div>
-            <div class="link-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/2k16/sistema/nucleobase/webpadwebsite/principal/simulacao_delegaacao.php?gAcao=0" target="_blank">
-                    <span class="icon"><i class="fas fa-calculator"></i></span> Simulador de Taxas CBMRS
-                </a>
-            </div>
-        </div>
-
         <div class="category-title">Secretaria</div>
         <div class="link-grid optimized-columns">
             <div class="link-card">
@@ -277,6 +263,20 @@
             </div>
         </div>
         
+        <div class="category-title">Apoio Técnico e Normas</div>
+        <div class="link-grid">
+            <div class="link-card">
+                <a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank">
+                    <span class="icon"><i class="fas fa-scroll"></i></span> Biblioteca de Legislação
+                </a>
+            </div>
+            <div class="link-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/2k16/sistema/nucleobase/webpadwebsite/principal/simulacao_delegaacao.php?gAcao=0" target="_blank">
+                    <span class="icon"><i class="fas fa-calculator"></i></span> Simulador de Taxas CBMRS
+                </a>
+            </div>
+        </div>
+
         <p class="impact-phrase">"O incêndio ocorre onde a prevenção falha"</p>
 
     </div>
