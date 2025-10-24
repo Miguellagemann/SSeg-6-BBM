@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
-        /* ESTILOS CSS - LAYOUT FINAL: CORES DO CBMRS (AZUL NAVAL E VERMELHO BOMBEIRO) */
+        /* ESTILOS CSS - LAYOUT FINAL: CORES CBMRS (AZUL NAVAL E VERMELHO BOMBEIRO) */
         
         body { 
             font-family: Arial, sans-serif; 
-            /* CORPO DE FUNDO: AZUL MARINHO/NAVAL */
+            /* CORPO DE FUNDO: AZUL MARINHO/NAVAL (Fundo escuro da Intranet) */
             background-color: #003366; 
             color: #fff; 
             margin: 0; 
             padding-top: 50px; 
+            min-height: 100vh; /* Ocupa a tela inteira */
         }
         
         /* BARRA SUPERIOR VERMELHA */
@@ -24,7 +25,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            /* COR DE DESTAQUE: VERMELHO BOMBEIRO */
+            /* COR DE DESTAQUE: VERMELHO BOMBEIRO (Barra de topo) */
             background-color: #CC0000; 
             color: #fff;
             padding: 10px 0;
@@ -39,39 +40,28 @@
         }
 
         .container { 
-            /* Borda de ~3cm de cada lado (100vw - 6cm) */
-            width: calc(100vw - 6cm); 
+            /* Para replicar o espaçamento lateral da intranet */
+            max-width: 1200px; 
             margin: 20px auto; 
             padding: 25px; 
-            background-color: #fff; /* Fundo do container permanece branco */
+            /* Fundo principal do container: Branco (como na maioria das páginas internas) */
+            background-color: #fff; 
             border-radius: 10px; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
             position: relative; 
             overflow: hidden; 
         }
         
-        /* TÍTULO PRINCIPAL VERMELHO, NEGRITO E COM EFEITO DE FOGO */
+        /* TÍTULO PRINCIPAL */
         h1 { 
             /* COR DE DESTAQUE: VERMELHO BOMBEIRO */
             color: #CC0000; 
             text-align: center; 
-            margin-bottom: 5px; 
+            margin-bottom: 30px; 
             font-size: 2.2em; 
             font-weight: bold; 
-            /* EFEITO DE SOMBRA PARA SIMULAR BRILHO/FOGO NO H1 */
-            text-shadow: 0 0 8px rgba(255, 165, 0, 0.8); 
-        }
-        /* SUBTÍTULO EM NEGRITO, MAIOR, E COM EFEITO DE FOGO */
-        .subtitle { 
-            text-align: center; 
-            margin-bottom: 30px; 
-            /* AUMENTO DA FONTE */
-            font-size: 1.3em; 
-            /* COR DE DESTAQUE: VERMELHO BOMBEIRO */
-            color: #CC0000; 
-            font-weight: bold; 
-            /* EFEITO DE SOMBRA PARA SIMULAR BRILHO/FOGO */
-            text-shadow: 0 0 5px rgba(255, 165, 0, 0.7); 
+            /* EFEITO DE SOMBRA para simular o BRILHO/LARANJA do seu logo/título */
+            text-shadow: 0 0 8px rgba(255, 100, 0, 0.5); 
         }
         
         /* ESTILOS DE GRID E ÍCONES */
@@ -84,10 +74,8 @@
             z-index: 1; 
         }
         
-        /* REGRA DE REDISTRIBUIÇÃO PARA SEÇÕES COM MAIS ITENS (Para telas largas) */
         @media (min-width: 1200px) {
             .category-title:has(+ .link-grid.three-column-grid) + .link-grid.three-column-grid {
-                /* Força colunas menores, permitindo 3 ou 4 em telas largas para economizar espaço vertical */
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
         }
@@ -102,13 +90,11 @@
             min-height: 90px; 
             z-index: 2; 
         }
-        /* EFEITO HOVER VERMELHO */
+        /* EFEITO HOVER VERMELHO/BORDA */
         .link-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-            /* COR DE FUNDO CLARA: VERMELHO CLARO/SALMÃO */
+            transform: translateY(-3px); 
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
             background-color: #FFEEF0; 
-            /* BORDA: VERMELHO BOMBEIRO */
             border-color: #CC0000; 
         }
         .link-card a { 
@@ -122,18 +108,15 @@
             height: 100%; 
         }
 
-        /* ESTILO PARA OS ÍCONES (Font Awesome) - AGORA COLORIDOS! */
+        /* ESTILO PARA OS ÍCONES (Font Awesome) - Cores da Brigada */
         .icon { 
             font-size: 40px; 
             margin-bottom: 5px; 
-            /* ÍCONES AGORA NA COR AZUL NAVAL DO CBMRS */
+            /* ÍCONES: AZUL NAVAL */
             color: #003366; 
         }
-        .icon i {
-            color: inherit;
-        }
 
-        /* TÍTULOS DE CATEGORIA VERMELHOS E NEGRITO */
+        /* TÍTULOS DE CATEGORIA (Similares aos títulos sublinhados em suas imagens) */
         .category-title { 
             /* LINHA DE DIVISÃO: VERMELHO BOMBEIRO */
             border-bottom: 3px solid #CC0000; 
@@ -148,19 +131,16 @@
             z-index: 1;
         }
 
-        /* FRASE DE IMPACTO NO RODAPÉ DO CONTAINER COM EFEITO DE FOGO */
+        /* FRASE DE IMPACTO NO RODAPÉ DO CONTAINER */
         .impact-phrase {
             text-align: center;
-            /* Cor de destaque: Vermelho Bombeiro */
             color: #CC0000; 
             font-style: italic;
             font-weight: bold;
             font-size: 1.1em;
             margin-top: 40px;
             padding-top: 10px;
-            /* Linha sutil para separar do conteúdo */
             border-top: 1px solid #ddd; 
-            /* EFEITO DE SOMBRA PARA SIMULAR BRILHO/FOGO NO RODAPÉ */
             text-shadow: 0 0 5px rgba(255, 165, 0, 0.7); 
         }
     </style>
@@ -171,8 +151,6 @@
     </div>
     <div class="container">
         <h1>CENTRAL DE ACESSOS RÁPIDOS</h1>
-        <p class="subtitle">Seção de Prevenção e Proteção Contra Incêndio - 6°BBM</p>
-
         <div class="category-title">Sistemas de Licenciamento</div>
         <div class="link-grid three-column-grid">
             <div class="link-card">
