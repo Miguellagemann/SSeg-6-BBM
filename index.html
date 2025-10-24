@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central 6º BBM - Prevenção</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <style>
         /* ESTILOS CSS - LAYOUT FINAL: CORES DO CBMRS (AZUL NAVAL E VERMELHO BOMBEIRO) */
         
@@ -72,7 +74,7 @@
             text-shadow: 0 0 5px rgba(255, 165, 0, 0.7); 
         }
         
-        /* ESTILOS DE GRID E EMOJIS */
+        /* ESTILOS DE GRID E ÍCONES */
         .link-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -120,12 +122,16 @@
             height: 100%; 
         }
 
-        /* ESTILO PARA OS EMOJIS (Ícones dos cards) */
+        /* ESTILO PARA OS ÍCONES (Font Awesome) - AGORA COLORIDOS! */
         .icon { 
             font-size: 40px; 
             margin-bottom: 5px; 
             /* ÍCONES AGORA NA COR AZUL NAVAL DO CBMRS */
             color: #003366; 
+        }
+        /* O i (tag do Font Awesome) herda a cor do .icon */
+        .icon i {
+            color: inherit;
         }
 
         /* TÍTULOS DE CATEGORIA VERMELHOS E NEGRITO */
@@ -172,12 +178,12 @@
         <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://solcbm.rs.gov.br/solcbm/" target="_blank">
-                    <span class="icon">💻</span> SOL - SISTEMA ONLINE DE LICENCIAMENTO
+                    <span class="icon"><i class="fas fa-desktop"></i></span> SOL - SISTEMA ONLINE DE LICENCIAMENTO
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://sisbom.cbm.rs.gov.br/msci/scs/" target="_blank">
-                    <span class="icon">🔗</span> SISBOM - Sistema Integrado
+                    <span class="icon"><i class="fas fa-link"></i></span> SISBOM - Sistema Integrado
                 </a>
             </div>
         </div>
@@ -186,12 +192,12 @@
         <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank">
-                    <span class="icon">📜</span> Biblioteca de Legislação
+                    <span class="icon"><i class="fas fa-scroll"></i></span> Biblioteca de Legislação
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://sisbom.cbm.rs.gov.br/msci/2k16/sistema/nucleobase/webpadwebsite/principal/simulacao_delegaacao.php?gAcao=0" target="_blank">
-                    <span class="icon">🧮</span> Simulador de Taxas CBMRS
+                    <span class="icon"><i class="fas fa-calculator"></i></span> Simulador de Taxas CBMRS
                 </a>
             </div>
         </div>
@@ -200,22 +206,27 @@
         <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/12xkp_53DO0Rcx7wUNHDeQmcqBOM824US" target="_blank">
-                    <span class="icon">📝</span> Auto de Imposição de Penalidade
+                    <span class="icon"><i class="fas fa-pen-to-square"></i></span> Auto de Imposição de Penalidade
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/1qk1bwE_ToynCFTjQmECmBn6FP_leXt53" target="_blank">
-                    <span class="icon">📧</span> Ofícios
+                    <span class="icon"><i class="fas fa-envelope"></i></span> Ofícios
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/1Bi1T2D8iNCYQt6pDHVvRXHUM_A-27ejH" target="_blank">
-                    <span class="icon">🛑</span> Interdições
+                    <span class="icon"><i class="fas fa-ban"></i></span> Interdições
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761#gid=1156634761" target="_blank">
-                    <span class="icon">⚖️</span> Def. Adm/Rec.Adm
+                    <span class="icon"><i class="fas fa-gavel"></i></span> Def. Adm/Rec.Adm
+                </a>
+            </div>
+            <div class="link-card">
+                <a href="https://www.mprs.mp.br/atendimento/envio-de-documentos/" target="_blank">
+                    <span class="icon"><i class="fas fa-balance-scale"></i></span> Ministério Público
                 </a>
             </div>
         </div>
@@ -224,32 +235,32 @@
         <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank">
-                    <span class="icon">🔢</span> Controle de Numeração Doc. SSeg
+                    <span class="icon"><i class="fas fa-hashtag"></i></span> Controle de Numeração Doc. SSeg
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/1zwTpU9w69PZiPZZ3B4FO3rgsnoneLFU2" target="_blank">
-                    <span class="icon">📋</span> Ordem de Serviço
+                    <span class="icon"><i class="fas fa-clipboard-list"></i></span> Ordem de Serviço
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1Ps3SbCXKtc6HxBq7HRRGpc8LdaxOYU2RM5pOQgNyIl0/edit?gid=2075238669#gid=2075238669" target="_blank">
-                    <span class="icon">🔍</span> Distribuição Análise
+                    <span class="icon"><i class="fas fa-magnifying-glass"></i></span> Distribuição Análise
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=785258701#gid=785258701" target="_blank">
-                    <span class="icon">↪️</span> Distribuição Recurso/Fact
+                    <span class="icon"><i class="fas fa-share-from-square"></i></span> Distribuição Recurso/Fact
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=147883583#gid=147883583" target="_blank">
-                    <span class="icon">🗣️</span> Distribuição Consultas Técnicas
+                    <span class="icon"><i class="fas fa-comment-dots"></i></span> Distribuição Consultas Técnicas
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://drive.google.com/drive/u/0/folders/1mCz6Bou1DNVaeC-OMmlfsSxlCy-B53Ra" target="_blank">
-                    <span class="icon">📚</span> Atas de Reunião
+                    <span class="icon"><i class="fas fa-book"></i></span> Atas de Reunião
                 </a>
             </div>
         </div>
@@ -258,12 +269,12 @@
         <div class="link-grid three-column-grid">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1LKMZxZnEcEMK75BAhQy3aRb444lFBua3imTK4NRc7W0/edit?gid=784303649#gid=784303649" target="_blank">
-                    <span class="icon">🚨</span> Vistorias Extraordinárias
+                    <span class="icon"><i class="fas fa-fire-extinguisher"></i></span> Vistorias Extraordinárias
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1050168816#gid=1050168816" target="_blank">
-                    <span class="icon">🗓️</span> Vistorias Ordinárias
+                    <span class="icon"><i class="fas fa-calendar-check"></i></span> Vistorias Ordinárias
                 </a>
             </div>
         </div>
