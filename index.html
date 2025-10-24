@@ -75,12 +75,11 @@
             z-index: 1; 
         }
         
-        /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria, Cartório e agora Chefe da SSeg), 
-           permite que os cartões fiquem menores em telas mais largas para evitar quebras indesejadas */
+        /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório) */
         @media (min-width: 900px) {
             .link-grid.optimized-columns {
-                grid-template-columns: repeat(3, 1fr); /* Força no máximo 3 colunas */
-                gap: 15px; /* Aumenta um pouco o espaçamento para centralizar melhor em 3 colunas */
+                grid-template-columns: repeat(3, 1fr); /* Força no máximo 3 colunas em telas médias */
+                gap: 15px; 
             }
         }
         @media (min-width: 1200px) {
@@ -89,12 +88,35 @@
                 gap: 10px;
             }
         }
+        
+        /* ESTILO: FORÇA 7 COLUNAS EM UMA ÚNICA LINHA (Chefe da SSeg) */
+        .link-grid.single-line-grid {
+            /* Força 7 colunas no layout principal (acima de 900px) */
+            grid-template-columns: repeat(7, 1fr); 
+            gap: 8px; /* Espaçamento menor para caber */
+        }
+        /* Ajuste para telas menores: Volta para 3 colunas para evitar quebra feia */
+        @media (max-width: 900px) {
+            .link-grid.single-line-grid {
+                grid-template-columns: repeat(3, 1fr); 
+            }
+        }
+        @media (min-width: 1200px) {
+            .link-grid.single-line-grid {
+                /* Garante que, se a tela for muito larga, ele use 7 colunas forçadas */
+                grid-template-columns: repeat(7, 1fr);
+            }
+        }
+        
 
-        /* NOVO ESTILO PARA CARDS PEQUENOS (Pelotões) */
+        /* ESTILOS ESPECÍFICOS PARA CARDS */
         .link-grid.pelotao-grid {
             /* Permite mais colunas em telas médias/grandes (até 6 cards por linha em tela cheia) */
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
             gap: 8px; /* Espaçamento menor */
+            
+            /* REMOVE ESPAÇO SUPERIOR PARA GRUDAR NO SUBTÍTULO */
+            margin-top: 5px; 
         }
         
         .link-card { 
@@ -170,7 +192,10 @@
             font-size: 1.1em;
             font-weight: bold;
             margin-top: 15px;
-            margin-bottom: 5px;
+            
+            /* ZERA O ESPAÇO INFERIOR PARA GRUDAR NO GRID */
+            margin-bottom: 0px; 
+            
             text-align: left;
             width: 100%;
         }
@@ -207,7 +232,7 @@
 
         <div class="category-title">Links SISBOM</div>
         
-        <div class="sub-category-title">1ª Cia BM / 6º BBM (Santa Cruz do Sul)</div>
+        <div class="sub-category-title">1ªCiaBM/6ºBBM (Santa Cruz do Sul)</div>
         <div class="link-grid pelotao-grid">
             <div class="link-card pelotao-card">
                 <a href="https://sisbom.cbm.rs.gov.br/msci/scs/" target="_blank">Santa Cruz do Sul</a>
@@ -223,7 +248,7 @@
             </div>
         </div>
         
-        <div class="sub-category-title">2ª Cia BM / 6º BBM (Lajeado)</div>
+        <div class="sub-category-title">2ªCiaBM/6ºBBM (Lajeado)</div>
         <div class="link-grid pelotao-grid">
             <div class="link-card pelotao-card">
                 <a href="https://sisbom.cbm.rs.gov.br/msci/lajeado/" target="_blank">Lajeado</a>
@@ -242,7 +267,7 @@
             </div>
         </div>
         
-        <div class="sub-category-title">3ª Cia BM / 6º BBM (Guaíba)</div>
+        <div class="sub-category-title">3ªCiaBM/6ºBBM (Guaíba)</div>
         <div class="link-grid pelotao-grid">
             <div class="link-card pelotao-card">
                 <a href="https://sisbom.cbm.rs.gov.br/msci/guaiba/" target="_blank">Guaíba</a>
@@ -259,7 +284,7 @@
         </div>
         
         <div class="category-title">Chefe da SSeg</div>
-        <div class="link-grid optimized-columns">
+        <div class="link-grid single-line-grid">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=797867071#gid=797867071" target="_blank">
                     <span class="icon"><i class="fas fa-hammer"></i></span> Inviabilidades Técnicas
