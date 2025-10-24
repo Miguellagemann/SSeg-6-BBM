@@ -90,7 +90,13 @@
             }
         }
 
-
+        /* NOVO ESTILO PARA CARDS PEQUENOS (Pelotões) */
+        .link-grid.pelotao-grid {
+            /* Permite mais colunas em telas médias/grandes (até 6 cards por linha em tela cheia) */
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+            gap: 8px; /* Espaçamento menor */
+        }
+        
         .link-card { 
             background-color: #ffffff; 
             border: 1px solid #ddd; 
@@ -101,6 +107,13 @@
             min-height: 90px; 
             z-index: 2; 
         }
+
+        /* Ajuste para o cartão de pelotão */
+        .link-card.pelotao-card {
+            min-height: 50px; /* Cartão menor */
+            padding: 10px;
+        }
+
         /* EFEITO HOVER VERMELHO/BORDA */
         .link-card:hover { 
             transform: translateY(-3px); 
@@ -119,6 +132,14 @@
             height: 100%; 
         }
 
+        /* Esconde o ícone grande nos cards de pelotão para caber só o texto */
+        .link-card.pelotao-card a {
+            font-size: 0.9em; /* Fonte um pouco menor */
+        }
+        .link-card.pelotao-card .icon {
+            display: none; 
+        }
+        
         /* ESTILO PARA OS ÍCONES (Font Awesome) - Cores da Brigada */
         .icon { 
             font-size: 40px; 
@@ -170,9 +191,73 @@
                     <span class="icon"><i class="fas fa-desktop"></i></span> SOL - SISTEMA ONLINE DE LICENCIAMENTO
                 </a>
             </div>
-            <div class="link-card">
+        </div>
+
+        <div class="category-title">Links SISBOM por Pelotão</div>
+        <div class="link-grid pelotao-grid">
+            <div class="link-card pelotao-card">
                 <a href="https://sisbom.cbm.rs.gov.br/msci/scs/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> SISBOM - Sistema Integrado
+                    <span class="icon"><i class="fas fa-link"></i></span> Santa Cruz do Sul
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/veracruz/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Vera Cruz
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/riopardo/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Rio Pardo
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/encsul/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Encruzilhada do Sul
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/lajeado/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Lajeado
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/estrela/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Estrela
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/venancio/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Venâncio Aires
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/taquari/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Taquari
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/encantado/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Encantado
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/guaiba/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Guaíba
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/saojeronimo/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> São Jerônimo
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/camaqua/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> Camaquã
+                </a>
+            </div>
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/saolourenco/" target="_blank">
+                    <span class="icon"><i class="fas fa-link"></i></span> São Lourenço do Sul
                 </a>
             </div>
         </div>
