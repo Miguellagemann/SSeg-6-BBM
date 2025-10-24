@@ -34,14 +34,13 @@
             z-index: 1000;
         }
         .header-title {
-            /* Fonte levemente reduzida */
             font-size: 1.1em; 
             font-weight: bold;
             margin: 0;
         }
 
         .container { 
-            /* REVERTIDO: Container com largura máxima ampla (1200px) */
+            /* Container com largura máxima ampla (1200px) */
             max-width: 1200px; 
             margin: 20px auto; 
             padding: 20px; /* Conteúdo interno com padding reduzido */
@@ -55,7 +54,6 @@
         
         /* TÍTULO PRINCIPAL */
         h1 { 
-            /* REDUÇÃO: Tamanho da fonte do título principal */
             font-size: 2.0em; 
             color: #CC0000; 
             text-align: center; 
@@ -66,7 +64,6 @@
         
         /* ESTILOS DE GRID E ÍCONES */
         .link-grid { 
-            /* PADRÃO: Tenta preencher a linha com cartões de no mínimo 250px de largura */
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
             gap: 10px; 
@@ -78,24 +75,22 @@
         /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório) */
         @media (min-width: 700px) {
             .link-grid.optimized-columns {
-                grid-template-columns: repeat(3, 1fr); /* Força no máximo 3 colunas em telas médias */
+                grid-template-columns: repeat(3, 1fr); 
                 gap: 10px; 
             }
         }
         @media (min-width: 900px) { 
             .link-grid.optimized-columns {
-                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Permite mais colunas em telas grandes */
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
                 gap: 8px; 
             }
         }
         
         /* ESTILO: FORÇA 7 COLUNAS EM UMA ÚNICA LINHA (Chefe da SSeg) */
         .link-grid.single-line-grid {
-            /* Força 7 colunas */
             grid-template-columns: repeat(7, 1fr); 
             gap: 5px; 
         }
-        /* Ajuste para telas menores: Volta para 3 colunas para evitar quebra feia */
         @media (max-width: 900px) {
             .link-grid.single-line-grid {
                 grid-template-columns: repeat(3, 1fr); 
@@ -104,7 +99,6 @@
         
         /* ESTILOS ESPECÍFICOS PARA CARDS */
         .link-grid.pelotao-grid {
-            /* Permite mais colunas em telas médias/grandes */
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
             gap: 5px; 
             margin-top: 5px; 
@@ -113,11 +107,11 @@
         .link-card { 
             background-color: #ffffff; 
             border: 1px solid #ddd; 
-            padding: 10px; /* REDUÇÃO: Padding interno do card */
+            padding: 10px; 
             border-radius: 6px; 
             text-align: center; 
             transition: transform 0.2s, box-shadow 0.2s;
-            min-height: 75px; /* REDUÇÃO: Altura mínima do card */
+            min-height: 75px; 
             z-index: 2; 
         }
 
@@ -131,7 +125,7 @@
             text-decoration: none; 
             color: #333; 
             font-weight: bold; 
-            font-size: 0.9em; /* Fonte levemente menor */
+            font-size: 0.9em; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
@@ -139,24 +133,23 @@
             height: 100%; 
         }
         .link-card.pelotao-card a {
-            font-size: 0.8em; /* Fonte ainda menor para pelotões */
+            font-size: 0.8em; 
         }
         
         /* ESTILO PARA OS ÍCONES (Font Awesome) - Cores da Brigada */
         .icon { 
-            font-size: 30px; /* REDUÇÃO: Tamanho dos ícones */
+            font-size: 30px; 
             margin-bottom: 5px; 
             color: #003366; 
         }
 
         /* TÍTULOS DE CATEGORIA (Similares aos títulos sublinhados em suas imagens) */
         .category-title { 
-            /* LINHA DE DIVISÃO: VERMELHO BOMBEIRO */
             border-bottom: 2px solid #CC0000; 
             padding-bottom: 5px; 
             margin-top: 30px; 
             margin-bottom: 8px; 
-            font-size: 1.3em; /* REDUÇÃO: Tamanho da fonte do título de categoria */
+            font-size: 1.3em; 
             color: #CC0000; 
             font-weight: bold; 
             position: relative; 
@@ -174,14 +167,87 @@
             width: 100%;
         }
 
+        /* ------------------------------------------------------------------ */
+        /* NOVOS ESTILOS PARA A SEÇÃO DE CONTATO */
+        /* ------------------------------------------------------------------ */
+        
+        .link-grid.contact-grid {
+            /* Garante o layout de 3 colunas para contato em telas maiores */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 15px; 
+            margin-top: 15px;
+        }
+        @media (min-width: 900px) {
+            .link-grid.optimized-columns.contact-grid {
+                /* Força 3 colunas para alinhamento perfeito */
+                grid-template-columns: repeat(3, 1fr); 
+            }
+        }
+        
+        .link-card.contact-card {
+            min-height: auto; /* Remove altura mínima */
+            text-align: left; 
+            padding: 15px;
+            
+        }
+        .link-card.contact-card a {
+            flex-direction: row; /* Ícone e texto lado a lado */
+            align-items: flex-start; 
+            text-align: left;
+            font-size: 0.9em;
+            
+        }
+        .link-card.contact-card .icon {
+            font-size: 28px;
+            margin-right: 15px;
+            margin-bottom: 0;
+            flex-shrink: 0; 
+            
+        }
+        /* Estilo para o ícone do WhatsApp */
+        .whatsapp-icon {
+            color: #25D366 !important; 
+        }
+        
+        .contact-details {
+            display: block; /* Garante que o conteúdo textual ocupe o espaço restante */
+            min-width: 0; /* Permite o conteúdo quebrar */
+        }
+        .contact-details strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #333;
+            white-space: nowrap; /* Título não quebra */
+        }
+        .contact-details p {
+            margin: 3px 0 5px 0;
+            font-size: 0.85em; /* Fonte um pouco menor para o endereço/email */
+            color: #555; 
+            font-weight: normal;
+            word-wrap: break-word; /* Permite quebrar o texto longo do endereço/email */
+        }
+        .action-link {
+            display: inline-block;
+            font-size: 0.8em;
+            color: #CC0000; 
+            font-weight: bold;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+        .link-card.contact-card:hover .action-link {
+            border-bottom: 1px solid #CC0000;
+        }
+        
+        /* ------------------------------------------------------------------ */
         /* FRASE DE IMPACTO NO RODAPÉ DO CONTAINER */
+        /* ------------------------------------------------------------------ */
         .impact-phrase {
             text-align: center;
             color: #CC0000; 
             font-style: italic;
             font-weight: bold;
             font-size: 1.0em; 
-            margin-top: 30px; 
+            margin-top: 40px; /* Aumento de margem para separar do Contato */
             padding-top: 8px;
             border-top: 1px solid #ddd; 
             text-shadow: 0 0 5px rgba(255, 165, 0, 0.7); 
@@ -386,7 +452,41 @@
                 </a>
             </div>
         </div>
-
+        
+        <div class="category-title">Contato e Atendimento</div>
+        <div class="link-grid optimized-columns contact-grid">
+            <div class="link-card contact-card">
+                <a href="https://share.google/cd8jwClKb7aJvgxsk" target="_blank">
+                    <span class="icon"><i class="fas fa-location-dot"></i></span> 
+                    <div class="contact-details">
+                        <strong>ENDEREÇO E LOCALIZAÇÃO</strong>
+                        <p>R. Tenente Coronel Brito, 03 - Centro, Santa Cruz do Sul - RS, 96810-202</p>
+                        <span class="action-link">Ver no Mapa</span>
+                    </div>
+                </a>
+            </div>
+            <div class="link-card contact-card">
+                <a href="https://wa.me/5551985248047" target="_blank">
+                    <span class="icon whatsapp-icon"><i class="fab fa-whatsapp"></i></span> 
+                    <div class="contact-details">
+                        <strong>WHATSAPP (Central)</strong>
+                        <p>(51) 98524-8047</p>
+                        <span class="action-link">Enviar Mensagem</span>
+                    </div>
+                </a>
+            </div>
+            <div class="link-card contact-card">
+                <a href="mailto:6bbm-dsci@cbm.rs.gov.br">
+                    <span class="icon"><i class="fas fa-envelope"></i></span> 
+                    <div class="contact-details">
+                        <strong>EMAIL INSTITUCIONAL</strong>
+                        <p>6bbm-dsci@cbm.rs.gov.br</p>
+                        <span class="action-link">Enviar Email</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
         <p class="impact-phrase">"O incêndio ocorre onde a prevenção falha"</p>
 
     </div>
