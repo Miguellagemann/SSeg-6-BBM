@@ -11,18 +11,16 @@
         
         body { 
             font-family: Arial, sans-serif; 
-            /* CORPO DE FUNDO: AZUL MARINHO/NAVAL (Revertido ao padrão) */
+            /* CORPO DE FUNDO: AZUL MARINHO/NAVAL */
             background-color: #003366; 
             color: #fff; 
             margin: 0; 
             padding-top: 50px; 
             min-height: 100vh; 
-            
-            /* Removido o filtro, background-image do body e transform: translateZ(0) */
-            position: relative; /* Essencial para que o ::after funcione corretamente */
+            position: relative; 
         }
 
-        /* --- MARCA D'ÁGUA CBMRS (Implementação Corrigida) --- */
+        /* --- MARCA D'ÁGUA CBMRS (USANDO ARQUIVO CARREGADO) --- */
         body::after {
             content: "";
             position: fixed; /* Fixa o brasão na tela, mesmo ao rolar */
@@ -30,27 +28,27 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d4/Brasao_cbmrs.png');
+            /* Substituído o URL pelo nome do arquivo PNG que você carregou (image_42e7c0.png) */
+            background-image: url('image_42e7c0.png');
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: 800px; /* Tamanho do brasão */
-            opacity: 0.05; /* Opacidade bem baixa para ser uma marca d'água sutil (5%) */
-            z-index: -1; /* Coloca o brasão atrás de todo o conteúdo do body */
-            pointer-events: none; /* Garante que não interfira em cliques */
+            background-size: 800px; 
+            opacity: 0.15; /* Opacidade aumentada para 15% para garantir visibilidade */
+            z-index: -1; 
+            pointer-events: none; 
         }
         
-        /* O container branco deve agora cobrir o azul escuro do body */
+        /* --- CONTAINER (NOVA COR: AZUL PÁLIDO) --- */
         .container { 
             max-width: 1200px; 
             margin: 20px auto; 
             padding: 20px; 
-            /* Fundo principal do container: Totalmente Branco. */
-            background-color: #fff; 
+            /* NOVA COR DE FUNDO: Azul Céu Pálido */
+            background-color: #E0F4FF; 
             border-radius: 8px; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
             position: relative; 
             overflow: hidden; 
-            /* Removido o transform: translateZ(0) desnecessário */
         }
         
         /* BARRA SUPERIOR VERMELHA */
@@ -65,7 +63,6 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); 
             z-index: 1000;
-            /* Removido o filtro desnecessário */
         }
         .header-title {
             font-size: 1.1em; 
@@ -126,6 +123,7 @@
         }
         
         .link-card { 
+            /* Fundo do Card Mantido Branco para Contraste */
             background-color: #ffffff; 
             border: 1px solid #ddd; 
             padding: 10px; 
