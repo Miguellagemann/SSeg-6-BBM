@@ -140,14 +140,6 @@
             display: none; 
         }
         
-        /* ESTILO PARA OS ÍCONES (Font Awesome) - Cores da Brigada */
-        .icon { 
-            font-size: 40px; 
-            margin-bottom: 5px; 
-            /* ÍCONES: AZUL NAVAL */
-            color: #003366; 
-        }
-
         /* TÍTULOS DE CATEGORIA (Similares aos títulos sublinhados em suas imagens) */
         .category-title { 
             /* LINHA DE DIVISÃO: VERMELHO BOMBEIRO */
@@ -161,6 +153,18 @@
             font-weight: bold; 
             position: relative; 
             z-index: 1;
+        }
+        
+        /* Título para os agrupamentos de Pelotões */
+        .sub-category-title {
+            /* Cor mais suave para subtítulos */
+            color: #003366; 
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            text-align: left;
+            width: 100%;
         }
 
         /* FRASE DE IMPACTO NO RODAPÉ DO CONTAINER */
@@ -193,72 +197,56 @@
             </div>
         </div>
 
-        <div class="category-title">Links SISBOM por Pelotão</div>
+        <div class="category-title">Links SISBOM</div>
+        
+        <div class="sub-category-title">1ª Cia BM / 6º BBM (Santa Cruz do Sul)</div>
         <div class="link-grid pelotao-grid">
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/scs/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Santa Cruz do Sul
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/scs/" target="_blank">Santa Cruz do Sul</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/veracruz/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Vera Cruz
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/veracruz/" target="_blank">Vera Cruz</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/riopardo/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Rio Pardo
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/riopardo/" target="_blank">Rio Pardo</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/encsul/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Encruzilhada do Sul
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/encsul/" target="_blank">Encruzilhada do Sul</a>
+            </div>
+        </div>
+        
+        <div class="sub-category-title">2ª Cia BM / 6º BBM (Lajeado)</div>
+        <div class="link-grid pelotao-grid">
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/lajeado/" target="_blank">Lajeado</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/lajeado/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Lajeado
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/estrela/" target="_blank">Estrela</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/estrela/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Estrela
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/venancio/" target="_blank">Venâncio Aires</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/venancio/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Venâncio Aires
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/taquari/" target="_blank">Taquari</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/taquari/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Taquari
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/encantado/" target="_blank">Encantado</a>
+            </div>
+        </div>
+        
+        <div class="sub-category-title">3ª Cia BM / 6º BBM (Guaíba)</div>
+        <div class="link-grid pelotao-grid">
+            <div class="link-card pelotao-card">
+                <a href="https://sisbom.cbm.rs.gov.br/msci/guaiba/" target="_blank">Guaíba</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/encantado/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Encantado
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/saojeronimo/" target="_blank">São Jerônimo</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/guaiba/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Guaíba
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/camaqua/" target="_blank">Camaquã</a>
             </div>
             <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/saojeronimo/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> São Jerônimo
-                </a>
-            </div>
-            <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/camaqua/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> Camaquã
-                </a>
-            </div>
-            <div class="link-card pelotao-card">
-                <a href="https://sisbom.cbm.rs.gov.br/msci/saolourenco/" target="_blank">
-                    <span class="icon"><i class="fas fa-link"></i></span> São Lourenço do Sul
-                </a>
+                <a href="https://sisbom.cbm.rs.gov.br/msci/saolourenco/" target="_blank">São Lourenço do Sul</a>
             </div>
         </div>
         
