@@ -11,46 +11,16 @@
         
         body { 
             font-family: Arial, sans-serif; 
-            /* CORPO DE FUNDO: AZUL MARINHO/NAVAL */
+            /* CORPO DE FUNDO: AZUL MARINHO/NAVAL (o brasão não estará mais aqui) */
             background-color: #003366; 
             color: #fff; 
             margin: 0; 
             padding-top: 50px; 
             min-height: 100vh; 
             position: relative; 
+            /* Removemos o body::after daqui */
         }
 
-        /* --- MARCA D'ÁGUA CBMRS (USANDO ARQUIVO CARREGADO) --- */
-        body::after {
-            content: "";
-            position: fixed; /* Fixa o brasão na tela, mesmo ao rolar */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Nome do arquivo PNG que você carregou */
-            background-image: url('image_42e7c0.png');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: 800px; 
-            opacity: 0.15; /* Opacidade aumentada para 15% para garantir visibilidade */
-            z-index: -1; 
-            pointer-events: none; 
-        }
-        
-        /* --- CONTAINER (NOVA COR: AZUL PÁLIDO) --- */
-        .container { 
-            max-width: 1200px; 
-            margin: 20px auto; 
-            padding: 20px; 
-            /* NOVA COR DE FUNDO: Azul Céu Pálido */
-            background-color: #E0F4FF; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-            position: relative; 
-            overflow: hidden; 
-        }
-        
         /* BARRA SUPERIOR VERMELHA */
         .header-bar {
             position: fixed;
@@ -70,6 +40,36 @@
             margin: 0;
         }
 
+        /* --- CONTAINER (COR AZUL PÁLIDO E NOVA MARCA D'ÁGUA) --- */
+        .container { 
+            max-width: 1200px; 
+            margin: 20px auto; 
+            padding: 20px; 
+            /* COR DE FUNDO: Azul Céu Pálido */
+            background-color: #E0F4FF; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        /* --- MARCA D'ÁGUA CBMRS DENTRO DO CONTAINER --- */
+        .container::before {
+            content: "";
+            position: absolute; /* Posição absoluta dentro do container */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.bombeiros.rs.gov.br/upload/recortes/201703/27142721_3149_GD.png');
+            background-repeat: no-repeat;
+            background-position: center center; /* Centraliza no container */
+            background-size: 70%; /* Ajusta o tamanho do brasão dentro do container */
+            opacity: 0.1; /* Opacidade sutil de 10% */
+            z-index: 0; /* Fica atrás do conteúdo (que tem z-index: 1 ou mais) */
+            pointer-events: none; /* Garante que não interfira em cliques */
+        }
+
         /* TÍTULO PRINCIPAL */
         h1 { 
             font-size: 2.0em; 
@@ -78,6 +78,8 @@
             margin-bottom: 25px; 
             font-weight: bold; 
             text-shadow: 0 0 8px rgba(255, 100, 0, 0.5); 
+            position: relative; /* Garante que o título esteja acima da marca d'água */
+            z-index: 1; 
         }
         
         /* ESTILOS DE GRID E ÍCONES */
@@ -87,7 +89,7 @@
             gap: 10px; 
             margin-top: 15px; 
             position: relative; 
-            z-index: 1; 
+            z-index: 1; /* Garante que os cards estejam acima da marca d'água */
         }
         
         /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório) */
@@ -105,14 +107,13 @@
         }
         
         /* ESTILO: FORÇA 7 COLUNAS EM UMA ÚNICA LINHA (Chefe da SSeg) */
-        /* Nota: Com a adição do novo card, agora são 8 itens no total */
         .link-grid.single-line-grid {
-            grid-template-columns: repeat(8, 1fr); /* Ajustado para 8 colunas */
+            grid-template-columns: repeat(8, 1fr); 
             gap: 5px; 
         }
         @media (max-width: 900px) {
             .link-grid.single-line-grid {
-                grid-template-columns: repeat(4, 1fr); /* Ajustado para 4 colunas em telas menores */
+                grid-template-columns: repeat(4, 1fr); 
             }
         }
         
@@ -132,7 +133,7 @@
             text-align: center; 
             transition: transform 0.2s, box-shadow 0.2s;
             min-height: 75px; 
-            z-index: 2; 
+            z-index: 2; /* Garante que os cards estejam acima da marca d'água */
         }
 
         /* Ajuste para o cartão de pelotão */
@@ -173,7 +174,7 @@
             color: #CC0000; 
             font-weight: bold; 
             position: relative; 
-            z-index: 1;
+            z-index: 1; /* Garante que os títulos estejam acima da marca d'água */
         }
         
         /* Título para os agrupamentos de Pelotões */
@@ -185,6 +186,8 @@
             margin-bottom: 0px; 
             text-align: left;
             width: 100%;
+            position: relative; /* Garante que subtítulos estejam acima da marca d'água */
+            z-index: 1; 
         }
 
         /* ------------------------------------------------------------------ */
@@ -206,21 +209,18 @@
             min-height: auto; 
             text-align: left; 
             padding: 15px;
-            
         }
         .link-card.contact-card a {
             flex-direction: row; 
             align-items: flex-start; 
             text-align: left;
             font-size: 0.9em;
-            
         }
         .link-card.contact-card .icon {
             font-size: 28px;
             margin-right: 15px;
             margin-bottom: 0;
             flex-shrink: 0; 
-            
         }
         /* Estilo para o ícone do WhatsApp */
         .whatsapp-icon {
@@ -371,7 +371,7 @@
                 </a>
             </div>
             <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXBNXtg/edit?gid=1156634761#gid=1156634761" target="_blank"> 
+                <a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761#gid=1156634761" target="_blank"> 
                     <span class="icon"><i class="fas fa-gavel"></i></span> Defesas Administrativas
                 </a>
             </div>
