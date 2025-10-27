@@ -19,24 +19,6 @@
             position: relative; 
         }
 
-        /* --- MARCA D'ÁGUA CBMRS EM TODA A PÁGINA (body::after) --- */
-        body::after {
-            content: "";
-            position: fixed; /* Fixa o brasão na tela */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* URL ATUALIZADA - Usando a imagem que você carregou: image_4121bd.png */
-            background-image: url('uploaded:image_4121bd.png-9b34cf5a-030a-4326-9a32-7ca218b6bf32');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover; /* Ajusta para cobrir toda a área sem distorcer */
-            opacity: 0.08; /* Opacidade sutil (ajuste conforme preferir, 0.05 a 0.15 é bom) */
-            z-index: -1; /* Fica atrás de todo o conteúdo */
-            pointer-events: none; /* Garante que não interfira em cliques */
-        }
-
         /* BARRA SUPERIOR VERMELHA */
         .header-bar {
             position: fixed;
@@ -56,17 +38,35 @@
             margin: 0;
         }
 
-        /* --- CONTAINER (COR AZUL PÁLIDO, SEM MARCA D'ÁGUA INTERNA) --- */
+        /* --- CONTAINER (COR AZUL PÁLIDO E NOVA MARCA D'ÁGUA) --- */
         .container { 
             max-width: 1200px; 
             margin: 20px auto; 
             padding: 20px; 
-            background-color: #E0F4FF; /* Mantido para contraste com o brasão do body */
+            background-color: #E0F4FF; 
             border-radius: 8px; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-            position: relative; /* Necessário para z-index dos elementos internos */
+            position: relative; 
             overflow: hidden; 
-            z-index: 1; /* Garante que o container esteja acima do brasão do body */
+            z-index: 1; 
+        }
+
+        /* --- MARCA D'ÁGUA CBMRS DENTRO DO CONTAINER (TAMANHO AUMENTADO) --- */
+        .container::before {
+            content: "";
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* URL do brasão atualizada para a imagem carregada */
+            background-image: url('uploaded:image_4121bd.png-9b34cf5a-030a-4326-9a32-7ca218b6bf32');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100%; 
+            opacity: 0.1; 
+            z-index: 0; 
+            pointer-events: none; 
         }
 
         /* TÍTULO PRINCIPAL */
@@ -78,7 +78,7 @@
             font-weight: bold; 
             text-shadow: 0 0 8px rgba(255, 100, 0, 0.5); 
             position: relative; 
-            z-index: 2; /* Garante que o título esteja acima de tudo */
+            z-index: 1; 
         }
         
         /* ESTILOS DE GRID E ÍCONES */
@@ -88,7 +88,7 @@
             gap: 10px; 
             margin-top: 15px; 
             position: relative; 
-            z-index: 2; /* Garante que os grids estejam acima de tudo */
+            z-index: 1; 
         }
         
         /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório) */
@@ -124,7 +124,7 @@
         }
         
         .link-card { 
-            /* Fundo branco com 95% de opacidade para revelar o brasão do body */
+            /* Fundo branco com 95% de opacidade para revelar o brasão */
             background-color: rgba(255, 255, 255, 0.95); 
             border: 1px solid #ddd; 
             padding: 10px; 
@@ -132,8 +132,7 @@
             text-align: center; 
             transition: transform 0.2s, box-shadow 0.2s;
             min-height: 75px; 
-            z-index: 3; /* Garante que os cards estejam acima da marca d'água do body e do container */
-            position: relative; /* Necessário para z-index funcionar */
+            z-index: 2; 
         }
 
         /* Ajuste para o cartão de pelotão */
@@ -174,7 +173,7 @@
             color: #CC0000; 
             font-weight: bold; 
             position: relative; 
-            z-index: 2; /* Garante que os títulos estejam acima de tudo */
+            z-index: 1; 
         }
         
         /* Título para os agrupamentos de Pelotões */
@@ -187,7 +186,7 @@
             text-align: left;
             width: 100%;
             position: relative; 
-            z-index: 2; 
+            z-index: 1; 
         }
 
         /* ------------------------------------------------------------------ */
@@ -270,7 +269,7 @@
             border-top: 1px solid #ddd; 
             text-shadow: 0 0 5px rgba(255, 165, 0, 0.7); 
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
     </style>
 </head>
