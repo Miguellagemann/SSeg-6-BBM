@@ -11,7 +11,7 @@
         
         body { 
             font-family: Arial, sans-serif; 
-            background-color: #003366; /* Fundo azul naval */
+            background-color: #003366; 
             color: #fff; 
             margin: 0; 
             padding-top: 50px; 
@@ -48,7 +48,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
             position: relative; 
             overflow: hidden; 
-            z-index: 1; 
         }
 
         /* --- MARCA D'ÁGUA CBMRS DENTRO DO CONTAINER (TAMANHO AUMENTADO) --- */
@@ -59,10 +58,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* URL do brasão atualizada para a imagem carregada */
-            background-image: url('uploaded:image_4121bd.png-9b34cf5a-030a-4326-9a32-7ca218b6bf32');
+            /* URL do brasão */
+            background-image: url('https://www.bombeiros.rs.gov.br/upload/recortes/201703/27142721_3149_GD.png');
             background-repeat: no-repeat;
             background-position: center center;
+            /* AJUSTE AQUI: Tamanho aumentado para 100% da largura do container */
             background-size: 100%; 
             opacity: 0.1; 
             z-index: 0; 
@@ -124,8 +124,7 @@
         }
         
         .link-card { 
-            /* Fundo branco com 95% de opacidade para revelar o brasão */
-            background-color: rgba(255, 255, 255, 0.95); 
+            background-color: #ffffff; 
             border: 1px solid #ddd; 
             padding: 10px; 
             border-radius: 6px; 
@@ -344,13 +343,11 @@
         
         <div class="category-title">Chefe da SSeg</div>
         <div class="link-grid single-line-grid">
-            
             <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=2016732584#gid=2016732584" target="_blank"> 
-                    <span class="icon"><i class="fas fa-clock"></i></span> Pendentes de Homologação
+                <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=797867071#gid=797867071" target="_blank">
+                    <span class="icon"><i class="fas fa-hammer"></i></span> Inviabilidades Técnicas
                 </a>
             </div>
-            
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=903472996#gid=903472996" target="_blank"> 
                     <span class="icon"><i class="fas fa-file-invoice"></i></span> FACT
@@ -381,13 +378,11 @@
                     <span class="icon"><i class="fas fa-list-ol"></i></span> Recursos Administrativos
                 </a>
             </div>
-            
             <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=797867071#gid=797867071" target="_blank">
-                    <span class="icon"><i class="fas fa-hammer"></i></span> Inviabilidades Técnicas
+                <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=2016732584#gid=2016732584" target="_blank"> 
+                    <span class="icon"><i class="fas fa-clock"></i></span> Pendentes de Homologação
                 </a>
             </div>
-
         </div>
         
         <div class="category-title">Secretaria</div>
