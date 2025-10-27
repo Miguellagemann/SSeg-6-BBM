@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central 6º BBM - Prevenção</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
         /* ESTILOS CSS - LAYOUT FINAL: CORES CBMRS (AZUL NAVAL E VERMELHO BOMBEIRO) */
         
         body { 
-            font-family: Arial, sans-serif; 
+            /* Refinamento 1.1: Usando Open Sans */
+            font-family: 'Open Sans', Arial, sans-serif; 
             background-color: #003366; /* Fundo azul naval */
             color: #fff; 
             margin: 0; 
@@ -59,12 +63,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* URL DO BRASÃO */
             background-image: url('https://www.bombeiros.rs.gov.br/upload/recortes/201703/27142721_3149_GD.png');
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: 80% auto; /* Ajuste para não esticar em telas muito largas, 80% da largura */
-            opacity: 0.12; /* Leve aumento de opacidade */
+            background-size: 80% auto; 
+            opacity: 0.12; 
             z-index: 0; 
             pointer-events: none; 
         }
@@ -75,7 +78,8 @@
             color: #CC0000; 
             text-align: center; 
             margin-bottom: 25px; 
-            font-weight: bold; 
+            /* Refinamento 1.2: Super bold */
+            font-weight: 800; 
             text-shadow: 0 0 8px rgba(255, 100, 0, 0.5); 
             position: relative; 
             z-index: 1; 
@@ -105,16 +109,13 @@
             }
         }
         
-        /* ESTILO: FORÇA 8 COLUNAS EM UMA ÚNICA LINHA (Chefe da SSeg) */
+        /* Refinamento 3: Estabilidade do Grid SSeg (Chefe da SSeg) */
         .link-grid.single-line-grid {
-            grid-template-columns: repeat(8, 1fr); 
+            /* Adaptável: Mínimo de 100px para cada card */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
             gap: 5px; 
         }
-        @media (max-width: 900px) {
-            .link-grid.single-line-grid {
-                grid-template-columns: repeat(4, 1fr); 
-            }
-        }
+        /* A media query antiga não é mais necessária, pois o auto-fit é mais flexível */
         
         /* ESTILOS ESPECÍFICOS PARA CARDS */
         .link-grid.pelotao-grid {
@@ -124,7 +125,6 @@
         }
         
         .link-card { 
-            /* Fundo branco com 95% de opacidade para revelar o brasão */
             background-color: rgba(255, 255, 255, 0.95); 
             border: 1px solid #ddd; 
             padding: 10px; 
@@ -135,7 +135,7 @@
             z-index: 2; 
         }
 
-        /* --- MELHORIA: EFEITO DE HOVER (ELEVAÇÃO E DESTAQUE) --- */
+        /* EFEITO DE HOVER (ELEVAÇÃO E DESTAQUE) */
         .link-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
@@ -145,21 +145,22 @@
         .link-card a { 
             text-decoration: none; 
             color: #333; 
-            font-weight: bold; 
-            font-size: 0.9em; 
+            /* Refinamento 1.2: Ajuste de peso da fonte */
+            font-weight: 600; 
+            font-size: 0.95em; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
             height: 100%; 
-            transition: color 0.2s; /* Transição de cor suave */
+            transition: color 0.2s; 
         }
         
         .link-card:hover a {
             color: #CC0000; 
         }
 
-        /* --- MELHORIA: FOCO DO TECLADO (ACESSILIDADE) --- */
+        /* FOCO DO TECLADO (ACESSILIDADE) */
         .link-card a:focus {
             outline: 2px solid #CC0000; 
             outline-offset: 3px;
@@ -179,7 +180,7 @@
             font-size: 30px; 
             margin-bottom: 5px; 
             color: #003366; 
-            transition: color 0.2s; /* Transição de cor suave */
+            transition: color 0.2s; 
         }
 
         .link-card:hover .icon {
@@ -194,7 +195,7 @@
             margin-bottom: 8px; 
             font-size: 1.3em; 
             color: #CC0000; 
-            font-weight: bold; 
+            font-weight: 800; /* Super bold para hierarquia */
             position: relative; 
             z-index: 1; 
         }
@@ -236,7 +237,7 @@
             flex-direction: row; 
             align-items: flex-start; 
             text-align: left;
-            font-size: 0.9em;
+            font-size: 0.95em; /* Ajuste de tamanho da fonte */
         }
         .link-card.contact-card .icon {
             font-size: 28px;
@@ -246,6 +247,16 @@
         }
         /* Estilo para o ícone do WhatsApp */
         .whatsapp-icon {
+            color: #25D366 !important; 
+        }
+        
+        /* Refinamento 2: Hover mais impactante para os ícones de contato */
+        .link-card.contact-card:hover .icon {
+            color: #CC0000; 
+        }
+
+        /* Refinamento 2: Exceção para o WhatsApp (manter verde) */
+        .link-card.contact-card:hover .whatsapp-icon {
             color: #25D366 !important; 
         }
         
@@ -263,7 +274,7 @@
             margin: 3px 0 5px 0;
             font-size: 0.85em; 
             color: #555; 
-            font-weight: normal;
+            font-weight: 400; /* Peso normal para detalhes */
             word-wrap: break-word; 
         }
         .action-link {
@@ -285,7 +296,7 @@
             text-align: center;
             color: #CC0000; 
             font-style: italic;
-            font-weight: bold;
+            font-weight: 600; /* Ajuste de peso */
             font-size: 1.0em; 
             margin-top: 40px; 
             padding-top: 8px;
