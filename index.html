@@ -15,6 +15,7 @@
             --cor-vermelho-bombeiro: #CC0000;
             --cor-azul-naval: #003366;
             --cor-fundo-claro: #E0F4FF;
+            --cor-dourado: #FFC107; /* Novo: Dourado para destaque */
         }
 
         /* ESTILOS CSS - LAYOUT FINAL: CORES CBMRS (AZUL NAVAL E VERMELHO BOMBEIRO) */
@@ -89,7 +90,8 @@
             text-align: center; 
             margin-bottom: 25px; 
             font-weight: 800; 
-            text-shadow: 0 0 8px rgba(255, 100, 0, 0.5); 
+            /* REFINAMENTO: Sombra dourada/amarela para destaque */
+            text-shadow: 0 0 10px var(--cor-dourado), 0 0 15px rgba(255, 193, 7, 0.5);
             position: relative; 
             z-index: 1; 
         }
@@ -323,7 +325,8 @@
             margin-top: 40px; 
             padding-top: 8px;
             border-top: 1px solid #ddd; 
-            text-shadow: 0 0 5px rgba(255, 165, 0, 0.7); 
+            /* Uso da variável */
+            text-shadow: 0 0 5px var(--cor-dourado); 
             position: relative;
             z-index: 10;
         }
