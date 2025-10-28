@@ -79,42 +79,19 @@
             pointer-events: none; 
         }
 
-        /* TÍTULO PRINCIPAL */
+        /* TÍTULO PRINCIPAL (AGORA COM CLAMP PARA RESPONSIVIDADE FLUIDA) */
         h1 { 
-            font-size: 2.0em; 
+            /* Garante o tamanho entre 1.5rem (mínimo) e 2.5rem (máximo) */
+            font-size: clamp(1.5rem, 4vw + 0.5rem, 2.5rem); 
             color: var(--cor-vermelho-bombeiro); 
             text-align: center; 
             margin-bottom: 25px; 
             font-weight: 800; 
-            /* REFINAMENTO: Sombra dourada/amarela para destaque */
             text-shadow: 0 0 10px var(--cor-dourado), 0 0 15px rgba(255, 193, 7, 0.5);
             position: relative; 
             z-index: 1; 
         }
         
-        /* NOVO: ESTILOS PARA O CAMPO DE BUSCA */
-        .search-container {
-            margin: 10px auto 30px auto; /* Espaçamento ajustado para ficar mais elegante */
-            position: relative;
-            z-index: 1;
-        }
-        #search-input {
-            width: 100%;
-            padding: 12px 15px;
-            font-size: 1.0em;
-            border: 2px solid var(--cor-azul-naval);
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: border-color 0.3s, box-shadow 0.3s;
-            background-color: #f7f7f7; 
-            box-sizing: border-box; /* Garante que o padding não estoure o width */
-        }
-        #search-input:focus {
-            border-color: var(--cor-vermelho-bombeiro);
-            box-shadow: 0 0 8px rgba(204, 0, 0, 0.4);
-            outline: none;
-        }
-
         /* ESTILOS DE GRID E ÍCONES */
         .link-grid { 
             display: grid; 
@@ -159,18 +136,18 @@
             border-radius: 6px; 
             text-align: center; 
             transform-style: preserve-3d;
-            transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s; /* Adicionado opacity para o filtro */
+            transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s; 
             min-height: 75px; 
             z-index: 2; 
         }
-        
+
         .link-card:hover {
             transform: translateZ(5px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
             border-color: var(--cor-vermelho-bombeiro); 
         }
         
-        /* NOVO: Estilo para cartas ocultas (melhora a transição do filtro) */
+        /* Estilo para cartas ocultas (melhora a transição do filtro) */
         .link-card.hidden {
             display: none;
             opacity: 0;
@@ -218,6 +195,29 @@
 
         .link-card:hover .icon {
             color: var(--cor-vermelho-bombeiro); 
+        }
+
+        /* NOVO: ESTILOS PARA O CAMPO DE BUSCA */
+        .search-container {
+            margin: 10px auto 30px auto; 
+            position: relative;
+            z-index: 1;
+        }
+        #search-input {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1.0em;
+            border: 2px solid var(--cor-azul-naval);
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background-color: #f7f7f7; 
+            box-sizing: border-box; 
+        }
+        #search-input:focus {
+            border-color: var(--cor-vermelho-bombeiro);
+            box-shadow: 0 0 8px rgba(204, 0, 0, 0.4);
+            outline: none;
         }
 
         /* TÍTULOS DE CATEGORIA */
@@ -587,34 +587,29 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('search-input');
-            // Seleciona TODOS os cards de link na página
             const linkCards = document.querySelectorAll('.link-card');
 
             searchInput.addEventListener('input', (event) => {
-                // Obtém o termo de busca em minúsculas e remove espaços indesejados
                 const searchTerm = event.target.value.toLowerCase().trim();
 
                 linkCards.forEach(card => {
+                    // Seleciona o primeiro elemento <a> dentro do card para obter o texto
                     const linkElement = card.querySelector('a');
                     
                     if (linkElement) {
-                        // Obtém todo o texto do link (incluindo ícone e nome)
+                        // Obtém todo o texto do link, incluindo o nome do ícone, o que ajuda na busca
                         const cardText = linkElement.textContent.toLowerCase();
                         
-                        // Verifica se o texto do card inclui o termo de busca
-                        if (cardText.includes(searchTerm)) {
-                            // Se encontrar o termo, mostra o card
+                        // Verifica se o texto do card, ou o texto do link do card de contato, inclui o termo
+                        const contactDetailsText = card.querySelector('.contact-details') ? card.querySelector('.contact-details').textContent.toLowerCase() : '';
+                        
+                        if (cardText.includes(searchTerm) || contactDetailsText.includes(searchTerm)) {
                             card.style.display = 'block'; 
                         } else {
-                            // Se não encontrar, oculta o card
                             card.style.display = 'none'; 
                         }
                     }
                 });
-                
-                // NOTA: Os títulos de categoria (category-title e sub-category-title) 
-                // continuam visíveis, o que garante que a estrutura da página não se perca, 
-                // mas os cards ocultos se colapsam, reorganizando o grid de links.
             });
         });
     </script>
