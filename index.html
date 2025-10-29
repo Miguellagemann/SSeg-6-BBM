@@ -102,7 +102,7 @@
             z-index: 1; 
         }
         
-        /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria e Cartório) */
+        /* OTIMIZAÇÃO: Para seções com muitos itens (Secretaria, Cartório, Monitoramento) */
         @media (min-width: 700px) {
             .link-grid.optimized-columns {
                 grid-template-columns: repeat(3, 1fr); 
@@ -166,6 +166,14 @@
             transition: color 0.2s; 
         }
         
+        /* Estilos de Contato Detalhado (RESTAURADO) */
+        .link-card a.contact-link-details {
+            flex-direction: row; 
+            align-items: flex-start; 
+            text-align: left;
+            font-size: 0.95em; 
+        }
+        
         .link-card:hover a {
             color: var(--cor-vermelho-bombeiro); 
         }
@@ -192,7 +200,7 @@
             color: var(--cor-azul-naval); 
             transition: color 0.2s; 
         }
-
+        
         .link-card:hover .icon {
             color: var(--cor-vermelho-bombeiro); 
         }
@@ -247,7 +255,7 @@
         }
 
         /* ------------------------------------------------------------------ */
-        /* ESTILOS PARA A SEÇÃO DE CONTATO */
+        /* ESTILOS PARA A SEÇÃO DE CONTATO DETALHADA */
         /* ------------------------------------------------------------------ */
         
         .link-grid.contact-grid {
@@ -266,12 +274,7 @@
             text-align: left; 
             padding: 15px;
         }
-        .link-card.contact-card a {
-            flex-direction: row; 
-            align-items: flex-start; 
-            text-align: left;
-            font-size: 0.95em; 
-        }
+
         .link-card.contact-card .icon {
             font-size: 28px;
             margin-right: 15px;
@@ -283,10 +286,6 @@
             color: #25D366 !important; 
         }
         
-        .link-card.contact-card:hover .icon {
-            color: var(--cor-vermelho-bombeiro); 
-        }
-
         .link-card.contact-card:hover .whatsapp-icon {
             color: #25D366 !important; 
         }
@@ -415,7 +414,7 @@
         <div class="link-grid single-line-grid">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=2016732584#gid=2016732584" target="_blank" rel="noopener noreferrer"> 
-                    <span class="icon" aria-hidden="true"><i class="fas fa-clock"></i></span> Pendentes de Homologação
+                    <span class="icon" aria-hidden="true"><i class="fas fa-clock"></i></span> Pendentes SSeg
                 </a>
             </div>
             <div class="link-card">
@@ -439,22 +438,22 @@
         <div class="link-grid optimized-columns">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1943034966#gid=1943034966" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-inbox"></i></span> Caixa de Entrada
+                    <span class="icon" aria-hidden="true"><i class="fas fa-inbox"></i></span> Entrada Geral
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1261318043#gid=1261318043" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-outbox"></i></span> Caixa de Saída
+                    <span class="icon" aria-hidden="true"><i class="fas fa-outbox"></i></span> Saída Geral
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=573385750#gid=573385750" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-file-export"></i></span> ARQUIVOS EML (Padrão)
+                    <span class="icon" aria-hidden="true"><i class="fas fa-file-export"></i></span> Arquivos EML
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1741114177#gid=1741114177" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-paper-plane"></i></span> APPCI Aguardando Envio
+                    <span class="icon" aria-hidden="true"><i class="fas fa-paper-plane"></i></span> APPCI para Envio
                 </a>
             </div>
             <div class="link-card">
@@ -473,12 +472,12 @@
         <div class="link-grid optimized-columns">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1943034966#gid=1943034966" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-file-alt"></i></span> Documentos a Cadastrar
+                    <span class="icon" aria-hidden="true"><i class="fas fa-file-alt"></i></span> Doc. para Cadastro
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1261318043#gid=1261318043" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-archive"></i></span> Documentos Cadastrados
+                    <span class="icon" aria-hidden="true"><i class="fas fa-archive"></i></span> Doc. Cadastrados
                 </a>
             </div>
             <div class="link-card">
@@ -488,17 +487,17 @@
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1741114177#gid=1741114177" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-file-signature"></i></span> Minutas Aguardando Assinatura
+                    <span class="icon" aria-hidden="true"><i class="fas fa-file-signature"></i></span> Minutas P/ Assinatura
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=2016732584#gid=2016732584" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-gavel"></i></span> Pendentes de Julgamento
+                    <span class="icon" aria-hidden="true"><i class="fas fa-gavel"></i></span> Processos P/ Julgar
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=280352508#gid=280352508" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-exclamation-triangle"></i></span> Processos com Vícios
+                    <span class="icon" aria-hidden="true"><i class="fas fa-exclamation-triangle"></i></span> Processos C/ Vício
                 </a>
             </div>
         </div>
@@ -507,12 +506,12 @@
         <div class="link-grid optimized-columns">
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1943034966#gid=1943034966" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-search-plus"></i></span> Vistorias Novas (1ª)
+                    <span class="icon" aria-hidden="true"><i class="fas fa-search-plus"></i></span> Vistorias Novas
                 </a>
             </div>
             <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1261318043#gid=1261318043" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-sync-alt"></i></span> Vistorias de Retorno
+                <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1261318043#gid=12613143" target="_blank" rel="noopener noreferrer">
+                    <span class="icon" aria-hidden="true"><i class="fas fa-sync-alt"></i></span> Vistorias Retorno
                 </a>
             </div>
             <div class="link-card">
@@ -532,7 +531,7 @@
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=280352508#gid=280352508" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-clipboard-list"></i></span> Checklist de Vistoria
+                    <span class="icon" aria-hidden="true"><i class="fas fa-clipboard-list"></i></span> Checklist Vistoria
                 </a>
             </div>
         </div>
@@ -546,15 +545,16 @@
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1183167623#gid=1183167623" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-chart-line"></i></span> Qtd. Vistorias Ordinárias
+                    <span class="icon" aria-hidden="true"><i class="fas fa-chart-line"></i></span> Qtd. Vistorias Ord.
                 </a>
             </div>
             <div class="link-card">
                 <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=280352508#gid=280352508" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-clock"></i></span> Qtd. Vistorias Pendentes
+                    <span class="icon" aria-hidden="true"><i class="fas fa-clock"></i></span> Qtd. Vistorias Pend.
                 </a>
             </div>
         </div>
+        
         <div class="category-title">Apoio Técnico e Normas</div>
         <div class="link-grid">
             <div class="link-card">
@@ -562,52 +562,41 @@
                     <span class="icon" aria-hidden="true"><i class="fas fa-book-open"></i></span> Legislação de PPCI (CBMRS)
                 </a>
             </div>
-            <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1943034966#gid=1943034966" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-headset"></i></span> Central de Dúvidas
-                </a>
-            </div>
-            <div class="link-card">
-                <a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1261318043#gid=1261318043" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-wrench"></i></span> Manutenção e TI (Solicitações)
-                </a>
-            </div>
         </div>
         
         <div class="category-title">Contatos Rápidos</div>
         <div class="link-grid optimized-columns contact-grid">
             <div class="link-card contact-card">
-                <a href="https://api.whatsapp.com/send?phone=5551999999999&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20o%20setor%20de%20Secretaria%20do%206%C2%B0%20BBM." target="_blank" rel="noopener noreferrer">
+                <a href="https://maps.app.goo.gl/endereco-do-batalhao" target="_blank" rel="noopener noreferrer" class="contact-link-details">
+                    <span class="icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span> 
+                    <span class="contact-details">
+                        <strong>Endereço SSeg/6º BBM</strong>
+                        <p>Avenida [Nome da Avenida], [Número] - [Bairro/Cidade]</p>
+                        <span class="action-link">Ver no Mapa</span>
+                    </span>
+                </a>
+            </div>
+            <div class="link-card contact-card">
+                <a href="https://api.whatsapp.com/send?phone=5551999999999&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20setor%20de%20Preven%C3%A7%C3%A3o%20do%206%C2%B0%20BBM." target="_blank" rel="noopener noreferrer" class="contact-link-details">
                     <span class="icon whatsapp-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></span> 
                     <span class="contact-details">
-                        <strong>Secretaria da SSeg</strong>
-                        <p>Horário comercial | Assuntos administrativos.</p>
+                        <strong>WhatsApp SSeg (Atendimento)</strong>
+                        <p>Horário comercial | Esclarecimento de dúvidas.</p>
                         <span class="action-link">Enviar WhatsApp</span>
                     </span>
                 </a>
             </div>
             <div class="link-card contact-card">
-                <a href="https://api.whatsapp.com/send?phone=5551999999999&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20o%20setor%20de%20Cart%C3%B3rio%20do%206%C2%B0%20BBM." target="_blank" rel="noopener noreferrer">
-                    <span class="icon whatsapp-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></span> 
+                <a href="mailto:prevencao6bbm@cbm.rs.gov.br" target="_blank" rel="noopener noreferrer" class="contact-link-details">
+                    <span class="icon" aria-hidden="true"><i class="fas fa-envelope"></i></span> 
                     <span class="contact-details">
-                        <strong>Cartório da SSeg</strong>
-                        <p>Horário comercial | Assuntos de cadastro e processos.</p>
-                        <span class="action-link">Enviar WhatsApp</span>
-                    </span>
-                </a>
-            </div>
-            <div class="link-card contact-card">
-                <a href="tel:+5551999999999" target="_blank" rel="noopener noreferrer">
-                    <span class="icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></span> 
-                    <span class="contact-details">
-                        <strong>Telefone Fixo SSeg</strong>
-                        <p>Atendimento geral.</p>
-                        <span class="action-link">Ligar agora</span>
+                        <strong>E-mail Institucional</strong>
+                        <p>E-mail oficial para envio de documentos e processos.</p>
+                        <span class="action-link">Enviar Email</span>
                     </span>
                 </a>
             </div>
         </div>
-
         <p class="impact-phrase">Prevenir é proteger: agilidade e excelência no serviço público.</p>
     </div>
 
@@ -621,6 +610,7 @@
                 const searchTerm = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
                 linkCards.forEach(card => {
+                    // O texto de busca verifica o conteúdo inteiro do card
                     const linkText = card.textContent.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                     
                     if (linkText.includes(searchTerm)) {
