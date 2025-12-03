@@ -150,7 +150,15 @@
             }
         }
 
-
+        /* ESTILO ESPECÍFICO PARA SARGENTEAÇÃO: 4 COLUNAS FIXAS */
+        @media (min-width: 900px) {
+            .link-grid.monitoramento-grid {
+                /* Garante 4 colunas de largura igual para dividir 8 itens em duas linhas perfeitas (4x4) */
+                grid-template-columns: repeat(4, 1fr); 
+                gap: 8px; /* Mantém o gap consistente */
+            }
+        }
+        
         /* Refinamento 3: Estabilidade do Grid SSeg (Chefe da SSeg) */
         .link-grid.single-line-grid {
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
