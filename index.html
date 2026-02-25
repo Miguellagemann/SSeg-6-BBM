@@ -3,212 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login 6º BBM</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<title>SAdmC - 6º BBM | CBMRS</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --azul-fundo-dark: #001233;
+    --azul-fundo-light: #002855;
+    --azul-painel-glass: rgba(109, 125, 150, 0.7); 
+    --laranja-cbm: #FF9E3D; 
+    --vermelho-cbm: #C40000;
+    --vermelho-hover: #A30000;
+    --azul-texto: #002B5B;
+    --cinza-fundo: #F4F6F9;
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(135deg, #062a47, #031c30);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+* { box-sizing: border-box; transition: all 0.2s ease; }
+
+body { 
+    margin: 0; font-family: 'Open Sans', sans-serif; background: var(--azul-fundo-dark); 
+    display: flex; flex-direction: column; min-height: 100vh; color: #334155;
 }
 
-/* HERO */
-.hero {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+/* --- LOGIN --- */
+#loginScreen { 
+    flex: 1; 
+    background: radial-gradient(circle at center, var(--azul-fundo-light) 0%, var(--azul-fundo-dark) 100%);
+    display: flex; justify-content: center; align-items: center; padding: 20px; 
+    position: relative; overflow: hidden;
 }
-
-.container {
-    width: 100%;
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: rgba(255,255,255,0.05);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+#loginScreen::before {
+    content: "";
+    position: absolute;
+    width: 150%; height: 150%;
+    background: linear-gradient(160deg, rgba(255,255,255,0.05) 0%, transparent 40%, rgba(255,255,255,0.02) 60%, transparent 100%);
+    transform: rotate(-15deg); pointer-events: none;
 }
-
-/* LADO ESQUERDO */
-.left {
-    background: #0b3a60;
-    color: white;
-    padding: 60px 40px;
-    text-align: center;
+.login-container {
+    display: flex; max-width: 850px; width: 100%; min-height: 480px;
+    border-radius: 12px; overflow: hidden; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6); z-index: 2;
 }
-
-.left img {
-    width: 130px;
-    margin-bottom: 25px;
+.login-left-side {
+    background: var(--azul-painel-glass);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    flex: 1; padding: 40px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: white; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
 }
-
-.left h1 {
-    font-size: 3.5rem;
-    color: #f5b400;
-    margin-bottom: 10px;
+.cbmrs-logo-text {
+    font-size: 82px; font-weight: 800; margin: 0; line-height: 1;
+    background: linear-gradient(to right, #FFEB3B 0%, #FF9800 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -2px;
 }
-
-.left p {
-    opacity: 0.85;
+.cbmrs-sub-text {
+    font-size: 14px; font-weight: 700; margin-top: 5px; color: #FF9800;
+    text-transform: uppercase; letter-spacing: 0.5px;
 }
-
-/* LOGIN */
-.right {
-    background: #f4f4f4;
-    padding: 60px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.login-right-side {
+    background: #FFFFFF; flex: 1.2; padding: 50px 40px;
+    display: flex; flex-direction: column; justify-content: center;
 }
-
-.right h2 {
-    margin-bottom: 25px;
-    color: #003366;
+.login-right-side h2 { color: var(--azul-texto); margin: 0; font-weight: 800; font-size: 24px; }
+.login-right-side p.subtitle { color: #666; font-size: 12px; margin-bottom: 25px; font-weight: 600; text-transform: uppercase; }
+.login-right-side input { 
+    width: 100%; padding: 14px; margin-top: 8px; border-radius: 6px; 
+    border: 1px solid #ddd; font-size: 15px; background: #fafafa;
 }
-
-.right input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+.password-wrapper { position: relative; width: 100%; }
+.password-wrapper i { position: absolute; right: 15px; top: 22px; cursor: pointer; color: #999; }
+.btn-entrar { 
+    width: 100%; padding: 15px; background: var(--vermelho-cbm); color: #fff; border: none; 
+    border-radius: 6px; cursor: pointer; font-weight: 700; margin-top: 25px;
+    font-size: 16px; text-transform: uppercase; letter-spacing: 1px;
 }
+.btn-entrar:hover { background: var(--vermelho-hover); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(196, 0, 0, 0.3); }
 
-.right input:focus {
-    outline: none;
-    border-color: #cc0000;
-    box-shadow: 0 0 8px rgba(204,0,0,0.3);
-}
-
-.right button {
-    padding: 12px;
-    border-radius: 6px;
-    border: none;
-    font-weight: bold;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-red { background: #cc0000; color: white; }
-.btn-green { background: #2ca55c; color: white; }
-.btn-gray { background: #888; color: white; }
-
-.right button:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-/* FOOTER */
-footer {
-    background: #02121f;
-    color: white;
-    padding: 40px 8%;
-    border-top: 4px solid #cc0000;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-footer h3 {
-    color: #f5b400;
-    margin-bottom: 15px;
-}
-
-footer p {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 6px;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 12px;
-    opacity: 0.6;
-}
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-
-    .left, .right {
-        padding: 40px 25px;
-    }
-}
+/* --- SISTEMA --- */
+#sistema { display: none; flex: 1; background: var(--cinza-fundo); }
+.header-top { background: var(--azul-texto); color: #fff; text-align: center; padding: 15px; font-weight: 800; font-size: 20px; }
+.header-sub { background: var(--vermelho-cbm); height: 5px; }
+.container { max-width: 1100px; margin: 30px auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.user-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+#painelDev { background: #f8fafc; padding: 25px; border-radius: 10px; margin-bottom: 30px; border: 2px solid var(--azul-texto); display:none; }
+.category { margin-bottom: 30px; display: none; animation: fadeIn 0.5s ease; }
+.category-title { border-left: 6px solid var(--vermelho-cbm); padding-left: 15px; color: var(--azul-texto); font-weight: 800; font-size: 19px; margin-bottom: 20px; }
+.link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.link-card { border: 1px solid #ddd; padding: 30px; text-align: center; border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit; height: 100%; }
+.link-card:hover { transform: translateY(-5px); border-top: 4px solid var(--vermelho-cbm); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.link-card i { font-size: 35px; color: var(--azul-texto); margin-bottom: 15px; }
+.logout-btn { background: var(--azul-texto); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: 600; }
+#btnTop { position: fixed; bottom: 30px; right: 30px; background: var(--vermelho-cbm); color: #fff; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; display: none; z-index: 1000; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+.footer-oficial { background: #000E1F; color: #fff; font-size: 14px; margin-top: auto; border-top: 5px solid var(--vermelho-cbm); }
+.footer-main { max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; padding: 40px 20px; }
+.footer-section h4 { color: var(--laranja-cbm); margin-bottom: 15px; font-weight: 800; text-transform: uppercase; }
+.footer-section p { margin: 5px 0; line-height: 1.6; font-weight: 600; }
+.acesso-restrito { text-align: center; padding: 15px; background: rgba(255, 255, 255, 0.05); color: #FF9E3D; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
 </head>
-
 <body>
 
-<section class="hero">
+<!-- LOGIN -->
+<div id="loginScreen">
+    <div class="login-container">
+        <div class="login-left-side">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Brasao_cbmrs.png" alt="Logo CBMRS" style="width: 170px; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));">
+            <h1 class="cbmrs-logo-text">CBMRS</h1>
+            <p class="cbmrs-sub-text">Corpo de Bombeiros Militar</p>
+        </div>
+        <div class="login-right-side">
+            <h2>SAdmC - 6º BBM</h2>
+            <p class="subtitle">Seção Administrativa e Correição</p>
+            
+            <label>Email</label>
+            <input type="email" id="email" placeholder="seu.email@cbm.rs.gov.br">
+            
+            <label>Senha</label>
+            <div class="password-wrapper">
+                <input type="password" id="senha" placeholder="Senha">
+                <i class="fas fa-eye" id="toggleIcon" onclick="togglePassword()"></i>
+            </div>
+            
+            <button class="btn-entrar" onclick="login()">Entrar</button>
+        </div>
+    </div>
+</div>
+
+<!-- SISTEMA -->
+<div id="sistema">
+    <div class="header-top">CORPO DE BOMBEIROS MILITAR DO RS</div>
+    <div class="header-sub"></div>
     <div class="container">
-
-        <div class="left">
-            <img src="https://www.bombeiros.rs.gov.br/upload/recortes/201703/27142721_3149_GD.png">
-            <h1>CBMRS</h1>
-            <p>Corpo de Bombeiros Militar</p>
-            <p>6º Batalhão de Bombeiro Militar</p>
+        <div class="user-bar">
+            <span id="usuarioLogado" style="font-weight: 800; color: var(--azul-texto); font-size: 18px;"></span>
+            <div style="font-size: 14px; font-weight: 600; color: #666;">
+                <span id="dataAtual"></span> | <span id="relogio"></span>
+            </div>
+            <button class="logout-btn" onclick="firebase.auth().signOut().then(()=>location.reload())">Sair</button>
         </div>
 
-        <div class="right">
-            <h2>SAdmC - Acesso</h2>
-            <input type="email" placeholder="E-mail">
-            <input type="password" placeholder="Senha">
-
-            <button class="btn-red">ENTRAR</button>
-            <button class="btn-green">CRIAR CONTA</button>
-            <button class="btn-gray">ESQUECI A SENHA</button>
+        <div id="painelDev">
+            <h3 style="margin:0; color: var(--azul-texto);"><i class="fas fa-user-shield"></i> Gestão de Acessos</h3>
+            <p>Área exclusiva de desenvolvedor/admin.</p>
         </div>
 
+        <!-- Categorias -->
+        <div class="category" id="cat-B1">
+            <div class="category-title">B1 - SEÇÃO PESSOAL</div>
+            <div class="link-grid">
+                <a href="#" class="link-card"><i class="fas fa-calendar-check"></i><strong>Escalas de Serviço</strong></a>
+                <a href="#" class="link-card"><i class="fas fa-umbrella-beach"></i><strong>Efetivo e Férias</strong></a>
+            </div>
+        </div>
+
+        <div class="category" id="cat-B2">
+            <div class="category-title">ALI - AGÊNCIA LOCAL DE INTELIGÊNCIA</div>
+            <div class="link-grid">
+                <a href="#" class="link-card"><i class="fas fa-user-secret"></i><strong>Dados de Inteligência</strong></a>
+                <a href="#" class="link-card"><i class="fas fa-chart-line"></i><strong>Estatísticas</strong></a>
+            </div>
+        </div>
+
+        <div class="category" id="cat-B3">
+            <div class="category-title">B3 - OPERAÇÕES</div>
+            <div class="link-grid">
+                <a href="#" class="link-card"><i class="fas fa-person-shelter"></i><strong>Planilha Operacional</strong></a>
+            </div>
+        </div>
+
+        <div class="category" id="cat-B4">
+            <div class="category-title">B4 - LOGÍSTICA</div>
+            <div class="link-grid">
+                <a href="#" class="link-card"><i class="fas fa-truck-pickup"></i><strong>Frota e VTRs</strong></a>
+                <a href="#" class="link-card"><i class="fas fa-boxes-stacked"></i><strong>Carga e Patrimônio</strong></a>
+            </div>
+        </div>
+
+        <div class="category" id="cat-SCor">
+            <div class="category-title">SCOR - CORREIÇÃO</div>
+            <div class="link-grid">
+                <a href="#" class="link-card"><i class="fas fa-gavel"></i><strong>Processos</strong></a>
+                <a href="#" class="link-card"><i class="fas fa-balance-scale"></i><strong>Legislação</strong></a>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h3>6º BBM</h3>
-            <p>Rua Tenente-Coronel Brito, 03</p>
-            <p>Santa Cruz do Sul - RS</p>
-            <p>(51) 3711-2323</p>
+<button id="btnTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+<footer class="footer-oficial">
+    <div class="footer-main">
+        <div class="footer-section">
+            <h4>6º BATALHÃO DE BOMBEIRO MILITAR</h4>
+            <p>Seção Administrativa e Correição - SAdmC</p>
         </div>
-
-        <div>
-            <h3>Seção Administrativa</h3>
-            <p>Correição e Disciplina</p>
-            <p>Arquivo Geral e Acervo</p>
-            <p>Atendimento: 8h às 18h</p>
-        </div>
-
-        <div>
-            <h3>Contato</h3>
-            <p>contato@cbmrs.rs.gov.br</p>
-            <p>(51) 3711-2323</p>
+        <div class="footer-section">
+            <h4>CONTATO</h4>
+            <p>
+                <a href="https://www.google.com/maps?q=R.+Tenente+Coronel+Brito,+03+-+Santa+Cruz+do+Sul/RS" target="_blank" style="color: inherit; text-decoration: none;">
+                    <i class="fas fa-location-dot" style="color: var(--vermelho-cbm); font-size: 20px; margin-right: 5px;"></i> R. Tenente Coronel Brito, 03 - Santa Cruz do Sul/RS
+                </a>
+            </p>
+            <p><i class="fas fa-envelope"></i> 6bbm-sadmc@cbm.rs.gov.br</p>
         </div>
     </div>
-
-    <div class="footer-bottom">
-        © 2026 CBMRS - Todos os direitos reservados
+    <div class="acesso-restrito">
+        <i class="fas fa-lock"></i> Acesso restrito aos militares do 6º BBM
     </div>
 </footer>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "SEU_API_KEY",
+  authDomain: "SEU_AUTH_DOMAIN",
+  databaseURL: "SUA_DATABASE_URL",
+  projectId: "SEU_PROJECT_ID",
+  storageBucket: "SEU_STORAGE_BUCKET",
+  messagingSenderId: "SEU_SENDER_ID",
+  appId: "SEU_APP_ID"
+};
+firebase.initializeApp(firebaseConfig);
+
+function togglePassword() {
+    const input = document.getElementById("senha");
+    const icon = document.getElementById("toggleIcon");
+    input.type = input.type === "password" ? "text" : "password";
+    icon.classList.toggle("fa-eye-slash");
+}
+
+async function login() {
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    try {
+        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, senha);
+        const user = userCredential.user;
+        const snapshot = await firebase.database().ref('militares/' + user.uid).get();
+        if(!snapshot.exists()) { alert("Usuário não autorizado!"); return; }
+        mostrarSistema(user, snapshot.val());
+    } catch(e) { alert("Erro no login: " + e.message); }
+}
+
+function mostrarSistema(user, dados) {
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("sistema").style.display = "block";
+    document.getElementById("usuarioLogado").innerText = "Militar: " + dados.nome;
+    document.querySelectorAll(".category").forEach(c => c.style.display = "none");
+    if(dados.nivel === "admin") {
+        document.querySelectorAll(".category").forEach(c => c.style.display = "block");
+        if(dados.nome === "Desenvolvedor") document.getElementById("painelDev").style.display = "block";
+    } else {
+        const alvo = document.getElementById("cat-" + dados.secao);
+        if(alvo) alvo.style.display = "block";
+    }
+}
+
+window.onscroll = function() {
+    const btn = document.getElementById("btnTop");
+    btn.style.display = (document.documentElement.scrollTop > 300) ? "flex" : "none";
+};
+
+function atualizarDataHora() {
+    const now = new Date();
+    document.getElementById("dataAtual").innerText = now.toLocaleDateString('pt-BR');
+    document.getElementById("relogio").innerText = now.toLocaleTimeString('pt-BR');
+}
+setInterval(atualizarDataHora, 1000);
+atualizarDataHora();
+</script>
 
 </body>
 </html>
