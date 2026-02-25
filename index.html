@@ -3,152 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAdmC - Acesso | 6º BBM</title>
+<title>Login 6º BBM</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-body {
+* {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: #062a47;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.main-wrapper {
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #062a47, #031c30);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 /* HERO */
 .hero {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 60px 8%;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
 }
 
 /* LADO ESQUERDO */
-.hero-left {
+.left {
+    background: #0b3a60;
+    color: white;
+    padding: 60px 40px;
     text-align: center;
-    color: #fff;
 }
 
-.hero-left img {
-    width: 140px;
-    margin-bottom: 20px;
+.left img {
+    width: 130px;
+    margin-bottom: 25px;
 }
 
-.hero-left h1 {
-    font-size: 4rem;
+.left h1 {
+    font-size: 3.5rem;
     color: #f5b400;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
-.hero-left p {
-    margin: 5px 0;
+.left p {
     opacity: 0.85;
 }
 
-/* LOGIN CARD */
-.login-card {
+/* LOGIN */
+.right {
     background: #f4f4f4;
-    padding: 40px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 420px;
-    justify-self: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.login-card h2 {
+.right h2 {
     margin-bottom: 25px;
     color: #003366;
 }
 
-.login-card input {
+.right input {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 14px;
 }
 
-.login-card input:focus {
+.right input:focus {
     outline: none;
     border-color: #cc0000;
-    box-shadow: 0 0 6px rgba(204,0,0,0.3);
+    box-shadow: 0 0 8px rgba(204,0,0,0.3);
 }
 
-.login-card button {
-    width: 100%;
+.right button {
     padding: 12px;
-    border: none;
     border-radius: 6px;
+    border: none;
     font-weight: bold;
     margin-bottom: 10px;
     cursor: pointer;
-    transition: 0.2s ease;
-    font-size: 14px;
+    transition: 0.2s;
 }
 
 .btn-red { background: #cc0000; color: white; }
 .btn-green { background: #2ca55c; color: white; }
 .btn-gray { background: #888; color: white; }
 
-.login-card button:hover {
+.right button:hover {
     transform: translateY(-2px);
     opacity: 0.9;
 }
 
 /* FOOTER */
-.footer {
-    background: #031c30;
-    padding: 50px 8%;
+footer {
+    background: #02121f;
+    color: white;
+    padding: 40px 8%;
     border-top: 4px solid #cc0000;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    color: #fff;
+    gap: 30px;
 }
 
-.footer h3 {
-    margin-bottom: 15px;
+footer h3 {
     color: #f5b400;
+    margin-bottom: 15px;
 }
 
-.footer p {
-    margin: 6px 0;
-    opacity: 0.8;
+footer p {
     font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 6px;
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
     font-size: 12px;
     opacity: 0.6;
 }
 
 /* RESPONSIVO */
 @media (max-width: 900px) {
-    .hero {
+    .container {
         grid-template-columns: 1fr;
-        text-align: center;
-        padding: 40px 6%;
     }
 
-    .login-card {
-        margin-top: 40px;
-    }
-
-    .hero-left h1 {
-        font-size: 3rem;
+    .left, .right {
+        padding: 40px 25px;
     }
 }
 </style>
@@ -156,63 +159,56 @@ body {
 
 <body>
 
-<main class="main-wrapper">
-
 <section class="hero">
+    <div class="container">
 
-    <div class="hero-left">
-        <img src="https://www.bombeiros.rs.gov.br/upload/recortes/201703/27142721_3149_GD.png" alt="Brasão CBMRS">
-        <h1>CBMRS</h1>
-        <p>Corpo de Bombeiros Militar</p>
-        <p>6º Batalhão de Bombeiro Militar</p>
+        <div class="left">
+            <img src="https://www.bombeiros.rs.gov.br/upload/recortes/201703/27142721_3149_GD.png">
+            <h1>CBMRS</h1>
+            <p>Corpo de Bombeiros Militar</p>
+            <p>6º Batalhão de Bombeiro Militar</p>
+        </div>
+
+        <div class="right">
+            <h2>SAdmC - Acesso</h2>
+            <input type="email" placeholder="E-mail">
+            <input type="password" placeholder="Senha">
+
+            <button class="btn-red">ENTRAR</button>
+            <button class="btn-green">CRIAR CONTA</button>
+            <button class="btn-gray">ESQUECI A SENHA</button>
+        </div>
+
     </div>
-
-    <div class="login-card">
-        <h2>SAdmC - Acesso</h2>
-
-        <input type="email" placeholder="E-mail">
-        <input type="password" placeholder="Senha">
-
-        <button class="btn-red">ENTRAR</button>
-        <button class="btn-green">CRIAR CONTA</button>
-        <button class="btn-gray">ESQUECI A SENHA</button>
-    </div>
-
 </section>
 
-<footer class="footer">
-
+<footer>
     <div class="footer-grid">
-
         <div>
-            <h3>6º BATALHÃO DE BOMBEIRO MILITAR</h3>
+            <h3>6º BBM</h3>
             <p>Rua Tenente-Coronel Brito, 03</p>
             <p>Santa Cruz do Sul - RS</p>
             <p>(51) 3711-2323</p>
         </div>
 
         <div>
-            <h3>SEÇÃO ADMINISTRATIVA</h3>
+            <h3>Seção Administrativa</h3>
             <p>Correição e Disciplina</p>
             <p>Arquivo Geral e Acervo</p>
             <p>Atendimento: 8h às 18h</p>
         </div>
 
         <div>
-            <h3>CONTATO</h3>
+            <h3>Contato</h3>
             <p>contato@cbmrs.rs.gov.br</p>
             <p>(51) 3711-2323</p>
         </div>
-
     </div>
 
     <div class="footer-bottom">
         © 2026 CBMRS - Todos os direitos reservados
     </div>
-
 </footer>
-
-</main>
 
 </body>
 </html>
