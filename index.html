@@ -1,315 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central 6º BBM - SSeg</title>
-    <title>Central 6º BBM - Padrão SOL</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Acessos | SSeg 6º BBM</title>
 
-    <style>
-        :root {
-            --azul-cbmrs: #002350; 
-            --laranja-cbmrs: #FF9F2D; 
-            --texto-escuro: #333;
-            --cor-sol-laranja: #F39200; 
-            --cor-azul-naval: #003366;
-            --cor-fundo-site: #002347;
-            --cor-container: #ffffff;
-            --cor-texto: #333;
-        }
+  <style>
+    :root {
+      --azul-profundo: #001B3A;
+      --azul-institucional: #003B73;
+      --azul-claro: #EAF2FB;
+      --vermelho-cbmrs: #B00020;
+      --vermelho-escuro: #7A0015;
+      --dourado: #F2A900;
+      --branco: #FFFFFF;
+      --cinza-fundo: #F3F6FA;
+      --cinza-borda: #D8E0EA;
+      --texto: #263238;
+      --texto-suave: #607080;
+    }
 
-        body { 
-            font-family: 'Open Sans', Arial, sans-serif; 
-            background-color: var(--azul-cbmrs); 
-            color: #fff; 
-            background-color: var(--cor-fundo-site); 
-            color: var(--cor-texto); 
-            margin: 0; 
-            padding-top: 60px; 
-            min-height: 100vh;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        /* BARRA SUPERIOR PADRÃO SOL */
-        .header-bar {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background-color: #fff; color: var(--azul-cbmrs);
-            padding: 12px 0; text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3); z-index: 1000;
-            border-bottom: 4px solid var(--laranja-cbmrs);
-            background-color: var(--cor-sol-laranja); 
-            color: #fff; padding: 15px 0; text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); z-index: 1000;
-            border-bottom: 3px solid #d88200;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(242, 169, 0, 0.18), transparent 28%),
+        linear-gradient(135deg, var(--azul-profundo), var(--azul-institucional));
+      color: var(--texto);
+      min-height: 100vh;
+      padding-top: 78px;
+    }
 
-        .header-title { font-size: 1em; font-weight: 800; margin: 0; text-transform: uppercase; }
-        .header-title { font-size: 1.1em; font-weight: 800; margin: 0; text-transform: uppercase; }
+    .header-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, var(--vermelho-escuro), var(--vermelho-cbmrs));
+      color: var(--branco);
+      padding: 14px 18px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+      z-index: 1000;
+      border-bottom: 4px solid var(--dourado);
+    }
 
-        .container { 
-            max-width: 1100px; margin: 20px auto; padding: 30px; 
-            background-color: #fff; border-radius: 12px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 1200px; margin: 20px auto; padding: 25px; 
-            background-color: var(--cor-container); 
-            border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
-            position: relative; z-index: 1; 
-        }
+    .header-title {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
 
-        h1 { font-size: 1.8em; color: var(--azul-cbmrs); text-align: center; margin-bottom: 30px; font-weight: 800; text-transform: uppercase; }
-        h1 { 
-            font-size: 2em; color: var(--cor-azul-naval); text-align: center; 
-            margin-bottom: 25px; font-weight: 800; 
-            border-bottom: 4px solid var(--cor-sol-laranja);
-            padding-bottom: 10px;
-        }
+    .header-subtitle {
+      margin: 4px 0 0;
+      font-size: 0.78rem;
+      opacity: 0.92;
+      font-weight: 600;
+    }
 
-        #search-input {
-            width: 100%; padding: 15px; font-size: 1em; border: 2px solid #ddd;
-            border-radius: 8px; background-color: #f9f9f9; color: var(--texto-escuro);
-            box-sizing: border-box; margin-bottom: 30px;
-            width: 100%; padding: 15px; font-size: 1.1em; border: 2px solid #ccc;
-            border-radius: 30px; background-color: #fff; box-sizing: border-box;
-            transition: all 0.3s; margin-bottom: 20px;
-        }
-        #search-input:focus { border-color: var(--cor-sol-laranja); outline: none; box-shadow: 0 0 10px rgba(243, 146, 0, 0.2); }
+    .container {
+      max-width: 1220px;
+      margin: 22px auto;
+      padding: 26px;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 16px;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
 
-        .category-title { 
-            border-left: 5px solid var(--laranja-cbmrs); padding-left: 15px;
-            margin: 40px 0 15px 0; font-size: 1.2em; color: var(--azul-cbmrs); 
-            font-weight: 800; text-transform: uppercase;
-            padding: 8px 15px; margin: 30px 0 12px 0; font-size: 1.25em; 
-            color: #fff; background-color: var(--cor-azul-naval);
-            font-weight: 700; border-radius: 4px; border-left: 6px solid var(--cor-sol-laranja);
-        }
+    .top-panel {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 18px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--azul-claro), #ffffff);
+      border: 1px solid var(--cinza-borda);
+    }
 
-        .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-        .link-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 10px; 
-        }
+    h1 {
+      margin: 0;
+      color: var(--azul-profundo);
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
 
-        .link-card { 
-            background-color: #fff; border: 1px solid #e0e0e0; border-radius: 8px; 
-            transition: all 0.2s ease; display: flex; align-items: center; justify-content: center;
-            background-color: #fff; border: 1px solid #ddd; 
-            padding: 12px; border-radius: 6px; text-align: center; 
-            transition: all 0.2s; min-height: 85px;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .link-card:hover { transform: translateY(-3px); border-color: var(--laranja-cbmrs); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .link-card a { 
-            text-decoration: none; color: var(--azul-cbmrs); font-weight: 700; 
-            padding: 15px; width: 100%; text-align: center; font-size: 0.9em;
-            display: flex; flex-direction: column; gap: 8px;
-        .link-card:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 5px 12px rgba(0,0,0,0.15); 
-            border-color: var(--cor-sol-laranja); 
-        }
-        .icon { font-size: 24px; color: var(--laranja-cbmrs); }
+    .description {
+      margin: 10px auto 0;
+      max-width: 820px;
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
 
-        .card-sol { background-color: var(--laranja-cbmrs) !important; border: none !important; }
-        .card-sol a, .card-sol .icon { color: #fff !important; }
+    .search-area {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin: 20px 0 8px;
+    }
 
-        .contact-card a { flex-direction: row !important; text-align: left !important; justify-content: flex-start !important; }
-        .contact-info strong { display: block; font-size: 0.9em; }
-        .contact-info span { font-size: 0.8em; color: #666; font-weight: 400; }
+    #search-input {
+      width: 100%;
+      padding: 15px 18px;
+      font-size: 1rem;
+      border: 2px solid var(--cinza-borda);
+      border-radius: 12px;
+      background-color: var(--branco);
+      outline: none;
+    }
 
-        .impact-phrase { text-align: center; color: var(--azul-cbmrs); font-style: italic; margin-top: 50px; font-weight: 600; border-top: 1px solid #eee; padding-top: 20px; }
-        .credits { text-align: center; font-size: 0.75em; color: #888; margin-top: 10px; }
-        .link-card a { 
-            text-decoration: none; color: #333; font-weight: 700; 
-            font-size: 0.85em; display: flex; flex-direction: column; align-items: center; gap: 8px;
-        }
-        .icon { font-size: 24px; color: var(--cor-sol-laranja); }
-        
-        .contact-card { text-align: left !important; justify-content: flex-start !important; }
-        .contact-card a { flex-direction: row !important; text-align: left !important; }
-        .contact-details strong { display: block; color: var(--cor-azul-naval); font-size: 0.85em; }
-        .contact-details p { margin: 0; font-size: 0.75em; color: #555; font-weight: 400; }
+    #search-input:focus {
+      border-color: var(--dourado);
+      box-shadow: 0 0 0 4px rgba(242, 169, 0, 0.18);
+    }
 
-        .impact-phrase { 
-            text-align: center; color: var(--cor-azul-naval); font-style: italic; 
-            margin-top: 40px; padding: 15px; border-top: 1px solid #ddd; font-weight: 600; 
-        }
-    </style>
+    .btn-clear {
+      min-width: 110px;
+      padding: 15px 14px;
+      border: none;
+      border-radius: 12px;
+      background: var(--azul-institucional);
+      color: var(--branco);
+      font-weight: 800;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .btn-clear:hover {
+      background: var(--azul-profundo);
+      transform: translateY(-1px);
+    }
+
+    .category-section {
+      margin-top: 28px;
+    }
+
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 15px;
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+      color: var(--branco);
+      background: linear-gradient(90deg, var(--azul-profundo), var(--azul-institucional));
+      font-weight: 900;
+      border-radius: 10px;
+      border-left: 7px solid var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 10px rgba(0, 27, 58, 0.18);
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+
+    .link-card {
+      background: var(--branco);
+      border: 1px solid var(--cinza-borda);
+      min-height: 94px;
+      border-radius: 12px;
+      text-align: center;
+      transition: 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.14);
+      border-color: var(--dourado);
+    }
+
+    .link-card a {
+      width: 100%;
+      height: 100%;
+      padding: 14px 12px;
+      text-decoration: none;
+      color: var(--texto);
+      font-weight: 800;
+      font-size: 0.86rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.25;
+      gap: 9px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--dourado), #FFD166);
+      color: var(--azul-profundo);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.12);
+    }
+
+    .contact-card {
+      text-align: left;
+      justify-content: flex-start;
+    }
+
+    .contact-card a {
+      flex-direction: row;
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .contact-details strong {
+      display: block;
+      color: var(--azul-profundo);
+      font-size: 0.86rem;
+    }
+
+    .contact-details p {
+      margin: 3px 0 0;
+      font-size: 0.78rem;
+      color: var(--texto-suave);
+      font-weight: 600;
+    }
+
+    .security-note {
+      margin-top: 34px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #FFF7E6;
+      border: 1px solid #FFE0A3;
+      color: #5F4300;
+      font-size: 0.86rem;
+      line-height: 1.5;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .impact-phrase {
+      text-align: center;
+      color: var(--azul-profundo);
+      font-style: italic;
+      margin-top: 18px;
+      padding: 15px;
+      border-top: 1px solid var(--cinza-borda);
+      font-weight: 800;
+    }
+
+    .footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.8rem;
+      margin: 20px 10px 30px;
+      line-height: 1.5;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding-top: 92px;
+      }
+
+      .header-title {
+        font-size: 0.82rem;
+        line-height: 1.25;
+      }
+
+      .header-subtitle {
+        font-size: 0.7rem;
+      }
+
+      .container {
+        margin: 12px;
+        padding: 16px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 1.45rem;
+      }
+
+      .description {
+        font-size: 0.85rem;
+      }
+
+      .search-area {
+        flex-direction: column;
+      }
+
+      .btn-clear {
+        width: 100%;
+      }
+
+      .category-title {
+        font-size: 0.92rem;
+      }
+
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="header-bar">
-        <p class="header-title">CORPO DE BOMBEIROS MILITAR DO RIO GRANDE DO SUL</p>
-        <p class="header-title">SEÇÃO DE SEGURANÇA CONTRA INCÊNDIO - SSeg 6° BBM</p>
+  <header class="header-bar">
+    <p class="header-title">SEÇÃO DE SEGURANÇA CONTRA INCÊNDIO - SSeg 6º BBM</p>
+    <p class="header-subtitle">Corpo de Bombeiros Militar do Estado do Rio Grande do Sul</p>
+  </header>
+
+  <main class="container">
+
+    <section class="top-panel">
+      <h1>Central de Acessos Rápidos</h1>
+      <p class="description">
+        Ambiente institucional destinado à organização dos principais links de trabalho da Seção de Segurança Contra Incêndio do 6º BBM.
+      </p>
+    </section>
+
+    <div class="search-area">
+      <input type="text" id="search-input" placeholder="Pesquisar links, sistemas, setores ou documentos...">
+      <button class="btn-clear" onclick="limparPesquisa()">Limpar</button>
     </div>
 
-    <div class="container">
-        <h1>Central de Serviços - 6º BBM</h1>
-        <h1>CENTRAL DE ACESSOS RÁPIDOS</h1>
+    <section class="category-section">
+      <div class="category-title">🖥️ Link SOL</div>
+      <div class="link-grid">
+        <div class="link-card">
+          <a href="https://solcbm.rs.gov.br/solcbm/" target="_blank" rel="noopener noreferrer">
+            <span class="icon">🖥️</span>
+            <strong>SOL - SISTEMA ONLINE</strong>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <input type="text" id="search-input" placeholder="O que você está procurando?">
-        <input type="text" id="search-input" placeholder="Pesquisar links, sistemas ou setores...">
+    <section class="category-section">
+      <div class="category-title">👨‍🚒 Chefe da SSeg</div>
+      <div class="link-grid">
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=2016732584" target="_blank" rel="noopener noreferrer"><span class="icon">⏱️</span>Vistorias Pend. Homologação</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=903472996" target="_blank" rel="noopener noreferrer"><span class="icon">📄</span>FACT</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=147883583" target="_blank" rel="noopener noreferrer"><span class="icon">💬</span>Consultas Técnicas</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1868236574" target="_blank" rel="noopener noreferrer"><span class="icon">↩️</span>Recursos Análises</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1482669118" target="_blank" rel="noopener noreferrer"><span class="icon">🔁</span>Recursos de Vistorias</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761" target="_blank" rel="noopener noreferrer"><span class="icon">⚖️</span>Defesas Administrativas</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=465741332" target="_blank" rel="noopener noreferrer"><span class="icon">📑</span>Recursos Administrativos</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=797867071" target="_blank" rel="noopener noreferrer"><span class="icon">🛠️</span>Inviabilidades Técnicas</a></div>
+      </div>
+    </section>
 
-        <div class="category-title">Link SOL</div>
-        <div class="link-grid">
-            <div class="link-card card-sol" data-search-terms="sistema online licenciamento siscop appci ncv civ">
-                <a href="https://solcbm.rs.gov.br/solcbm/" target="_blank" rel="noopener noreferrer">
-                    <span class="icon"><i class="fas fa-desktop"></i></span> SISTEMA SOL - ACESSO CBMRS
-                </a>
+    <section class="category-section">
+      <div class="category-title">📌 Sargenteação</div>
+      <div class="link-grid">
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1n31GnynlNjcxk7SATuYd6DBL-yXoyzHo" target="_blank" rel="noopener noreferrer"><span class="icon">📅</span>Escala de Serviço</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank" rel="noopener noreferrer"><span class="icon">#️⃣</span>Controle Numeração Doc.</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1zwTpU9w69PZiPZZ3B4FO3rgsnoneLFU2" target="_blank" rel="noopener noreferrer"><span class="icon">📋</span>Ordem de Serviço</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1Bda9m9XfEVFKXs8kvXpZ9dgfywfz1HIV" target="_blank" rel="noopener noreferrer"><span class="icon">🔎</span>Relação Efetivo SSeg</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1cxrAiC79aJ7DkJEbRfGrj7oShPmKFoLZ" target="_blank" rel="noopener noreferrer"><span class="icon">🏖️</span>Plano de Férias</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1rNWf3Nf8c3kRhWePD7CH-uBZgo_EpUyt" target="_blank" rel="noopener noreferrer"><span class="icon">🗺️</span>Mapas</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1mCz6Bou1DNVaeC-OMmlfsSxlCy-B53Ra" target="_blank" rel="noopener noreferrer"><span class="icon">📘</span>Atas de Reunião</a></div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-title">🗂️ Secretaria</div>
+      <div class="link-grid">
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank" rel="noopener noreferrer"><span class="icon">#️⃣</span>Controle Numeração Doc.</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Ps3SbCXKtc6HxBq7HRRGpc8LdaxOYU2RM5pOQgNyIl0/edit?gid=0" target="_blank" rel="noopener noreferrer"><span class="icon">📊</span>Distribuição Análise</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=785258701" target="_blank" rel="noopener noreferrer"><span class="icon">📤</span>Distribuição Recurso/Fact</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=147883583" target="_blank" rel="noopener noreferrer"><span class="icon">💬</span>Distribuição C. Técnicas</a></div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-title">📁 Cartório</div>
+      <div class="link-grid">
+        <div class="link-card"><a href="https://drive.google.com/drive/folders/1G7ZNu1UWS6Ctq9rpMZDNN5rabC6QmgJZ" target="_blank" rel="noopener noreferrer"><span class="icon">📝</span>Auto Imposição Penalidade</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/18Tn7oSzviDKGbaJ1t6tD4j-ls7cI_XkH" target="_blank" rel="noopener noreferrer"><span class="icon">✉️</span>Ofícios</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1Bi1T2D8iNCYQt6pDHVvRXHUM_A-27ejH" target="_blank" rel="noopener noreferrer"><span class="icon">⛔</span>Interdições</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761" target="_blank" rel="noopener noreferrer"><span class="icon">⚖️</span>Def. Adm/Rec.Adm</a></div>
+        <div class="link-card"><a href="https://www.mprs.mp.br/atendimento/envio-de-documentos/" target="_blank" rel="noopener noreferrer"><span class="icon">🏛️</span>Ministério Público</a></div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-title">🚒 Fiscalização</div>
+      <div class="link-grid">
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1LKMZxZnEcEMK75BAhQy3aRb444lFBua3imTK4NRc7W0/edit?gid=784303649" target="_blank" rel="noopener noreferrer"><span class="icon">🚒</span>Vistorias Extraordinárias</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1325689788" target="_blank" rel="noopener noreferrer"><span class="icon">📣</span>Denúncias</a></div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-title">🔍 Vistorias</div>
+      <div class="link-grid">
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1050168816" target="_blank" rel="noopener noreferrer"><span class="icon">✅</span>Vistorias Ordinárias</a></div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-title">📊 Monitoramento e Gestão</div>
+      <div class="link-grid">
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Ps3SbCXKtc6HxBq7HRRGpc8LdaxOYU2RM5pOQgNyIl0/edit?gid=2075238669" target="_blank" rel="noopener noreferrer"><span class="icon">⚙️</span>Qtd. Análise</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1-swdoWtzm9xaaVy6McltmWna7SGES3imAP0IMay41Tg/edit?gid=1568785467" target="_blank" rel="noopener noreferrer"><span class="icon">📥</span>Pendências SOL</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=544796145" target="_blank" rel="noopener noreferrer"><span class="icon">⚖️</span>Pend. Def.Adm/Rec.Adm</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=1229427888" target="_blank" rel="noopener noreferrer"><span class="icon">💬</span>Pend. C. Técnicas</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=583968334" target="_blank" rel="noopener noreferrer"><span class="icon">📎</span>Pend. FACT/Rec./Inv.</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1741114177" target="_blank" rel="noopener noreferrer"><span class="icon">🏢</span>Qtd. APPCI/NCV/CIV</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1183167623" target="_blank" rel="noopener noreferrer"><span class="icon">🧭</span>Qtd. Vistorias Ord.</a></div>
+        <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=280352508" target="_blank" rel="noopener noreferrer"><span class="icon">⚠️</span>Vistorias Pendentes</a></div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-title">📚 Apoio Técnico e Normas</div>
+      <div class="link-grid">
+        <div class="link-card"><a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank" rel="noopener noreferrer"><span class="icon">📜</span>Biblioteca Legislação</a></div>
+        <div class="link-card"><a href="https://sisbom.cbm.rs.gov.br/msci/2k16/sistema/nucleobase/webpadwebsite/principal/simulacao_delegaacao.php?gAcao=0" target="_blank" rel="noopener noreferrer"><span class="icon">🧮</span>Simulador de Taxas</a></div>
+        <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/13oBp9G9E6qQssLKUk8hWyn2bsnDNGM44" target="_blank" rel="noopener noreferrer"><span class="icon">📄</span>Orientações DSPCI</a></div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="category-title">📍 Contato e Atendimento</div>
+      <div class="link-grid">
+        <div class="link-card contact-card">
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua+Tenente+Coronel+Brito+03+Santa+Cruz+do+Sul+RS" target="_blank" rel="noopener noreferrer">
+            <span class="icon">📍</span>
+            <div class="contact-details">
+              <strong>ENDEREÇO</strong>
+              <p>R. Tenente Coronel Brito, 03 - Santa Cruz do Sul</p>
             </div>
-            <div class="link-card"><a href="https://solcbm.rs.gov.br/solcbm/" target="_blank"><span class="icon"><i class="fas fa-desktop"></i></span><strong>SOL - SISTEMA ONLINE</strong></a></div>
+          </a>
         </div>
 
-        <div class="category-title">Chefe da SSeg</div>
-        <div class="link-grid">
-            <div class="link-card" data-search-terms="vistoria homologação pendente aprovar"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=2016732584" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-clock"></i></span>Vistorias Pendentes</a></div>
-            <div class="link-card" data-search-terms="fact fiscalização multa autuação"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=903472996" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-file-invoice"></i></span>FACT</a></div>
-            <div class="link-card" data-search-terms="consultas tecnicas ct parecer"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=147883583" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-comments"></i></span>Consultas Técnicas</a></div>
-            <div class="link-card" data-search-terms="recursos analises processo indeferido"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1868236574" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-undo"></i></span>Recursos Análises</a></div>
-            <div class="link-card" data-search-terms="recursos vistorias processo indeferido"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1482669118" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-undo-alt"></i></span>Recursos Vistorias</a></div>
-            <div class="link-card" data-search-terms="defesas administrativas multa autuação"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-gavel"></i></span>Defesas Administrativas</a></div>
-            <div class="link-card" data-search-terms="recursos administrativos processo julgamento"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=465741332" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-list-ol"></i></span>Recursos Administrativos</a></div>
-            <div class="link-card" data-search-terms="inviabilidades tecnicas processo"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=797867071" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-hammer"></i></span>Inviabilidades Técnicas</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=2016732584" target="_blank"><span class="icon"><i class="fas fa-clock"></i></span>Vistorias Pend. Homologação</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=903472996" target="_blank"><span class="icon"><i class="fas fa-file-invoice"></i></span>FACT</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=147883583" target="_blank"><span class="icon"><i class="fas fa-comments"></i></span>Consultas Técnicas</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1868236574" target="_blank"><span class="icon"><i class="fas fa-undo"></i></span>Recursos Análises</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1482669118" target="_blank"><span class="icon"><i class="fas fa-undo-alt"></i></span>Recursos de Vistorias</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761" target="_blank"><span class="icon"><i class="fas fa-gavel"></i></span>Defesas Administrativas</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=465741332" target="_blank"><span class="icon"><i class="fas fa-list-ol"></i></span>Recursos Administrativos</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=797867071" target="_blank"><span class="icon"><i class="fas fa-hammer"></i></span>Inviabilidades Técnicas</a></div>
-        </div>
-
-        <div class="category-title">Sargenteação</div>
-        <div class="link-grid">
-            <div class="link-card" data-search-terms="escala de serviço folga efetivo"><a href="https://drive.google.com/drive/u/0/folders/1n31GnynlNjcxk7SATuYd6DBL-yXoyzHo" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-calendar-alt"></i></span>Escala de Serviço</a></div>
-            <div class="link-card" data-search-terms="controle numeração documentos sseg"><a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-hashtag"></i></span>Controle de Numeração</a></div>
-            <div class="link-card" data-search-terms="ordem de serviço os diretriz"><a href="https://drive.google.com/drive/u/0/folders/1zwTpU9w69PZiPZZ3B4FO3rgsnoneLFU2" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-clipboard-list"></i></span>Ordem de Serviço</a></div>
-            <div class="link-card" data-search-terms="relação efetivo sseg militar"><a href="https://drive.google.com/drive/u/0/folders/1Bda9m9XfEVFKXs8kvXpZ9dgfywfz1HIV" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-users"></i></span>Relação Efetivo</a></div>
-            <div class="link-card" data-search-terms="plano de férias recesso folga"><a href="https://drive.google.com/drive/u/0/folders/1cxrAiC79aJ7DkJEbRfGrj7oShPmKFoLZ" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-umbrella-beach"></i></span>Plano de Férias</a></div>
-            <div class="link-card" data-search-terms="mapas municipios área"><a href="https://drive.google.com/drive/u/0/folders/1rNWf3Nf8c3kRhWePD7CH-uBZgo_EpUyt" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-map-marked-alt"></i></span>Mapas</a></div>
-            <div class="link-card" data-search-terms="atas de reunião registro"><a href="https://drive.google.com/drive/u/0/folders/1mCz6Bou1DNVaeC-OMmlfsSxlCy-B53Ra" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-book"></i></span>Atas de Reunião</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1n31GnynlNjcxk7SATuYd6DBL-yXoyzHo" target="_blank"><span class="icon"><i class="fas fa-hashtag"></i></span>Escala de Serviço</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank"><span class="icon"><i class="fas fa-hashtag"></i></span>Controle Numeração Doc.</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1zwTpU9w69PZiPZZ3B4FO3rgsnoneLFU2" target="_blank"><span class="icon"><i class="fas fa-clipboard-list"></i></span>Ordem de Serviço</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1Bda9m9XfEVFKXs8kvXpZ9dgfywfz1HIV" target="_blank"><span class="icon"><i class="fas fa-magnifying-glass"></i></span>Relação Efetivo SSeg</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1cxrAiC79aJ7DkJEbRfGrj7oShPmKFoLZ" target="_blank"><span class="icon"><i class="fas fa-share-from-square"></i></span>Plano de Férias</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1rNWf3Nf8c3kRhWePD7CH-uBZgo_EpUyt" target="_blank"><span class="icon"><i class="fas fa-comment-dots"></i></span>Mapas</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1mCz6Bou1DNVaeC-OMmlfsSxlCy-B53Ra" target="_blank"><span class="icon"><i class="fas fa-book"></i></span>Atas de Reunião</a></div>
-        </div>
-
-        <div class="category-title">Secretaria</div>
-        <div class="link-grid">
-            <div class="link-card" data-search-terms="controle numeração sseg"><a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-hashtag"></i></span>Controle Numeração</a></div>
-            <div class="link-card" data-search-terms="distribuição analise projeto appci"><a href="https://docs.google.com/spreadsheets/d/1Ps3SbCXKtc6HxBq7HRRGpc8LdaxOYU2RM5pOQgNyIl0/edit?gid=0" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-search"></i></span>Distribuição Análise</a></div>
-            <div class="link-card" data-search-terms="distribuição recurso fact"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=785258701" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-share-square"></i></span>Distribuição Recurso/Fact</a></div>
-            <div class="link-card" data-search-terms="distribuição consultas tecnicas ct"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=147883583" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-comment-dots"></i></span>Distribuição Consultas Técnicas</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1B6YQiTruUaYA4mkqGJtm793qfTRW7SLN" target="_blank"><span class="icon"><i class="fas fa-hashtag"></i></span>Controle Numeração Doc.</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Ps3SbCXKtc6HxBq7HRRGpc8LdaxOYU2RM5pOQgNyIl0/edit?gid=0" target="_blank"><span class="icon"><i class="fas fa-magnifying-glass"></i></span>Distribuição Análise</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=785258701" target="_blank"><span class="icon"><i class="fas fa-share-from-square"></i></span>Distribuição Recurso/Fact</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=147883583" target="_blank"><span class="icon"><i class="fas fa-comment-dots"></i></span>Distribuição C. Técnicas</a></div>
-        </div>
-
-        <div class="category-title">Cartório</div>
-        <div class="link-grid">
-            <div class="link-card" data-search-terms="auto de imposição penalidade"><a href="https://drive.google.com/drive/folders/1G7ZNu1UWS6Ctq9rpMZDNN5rabC6QmgJZ" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-pen-to-square"></i></span>Auto de Imposição</a></div>
-            <div class="link-card" data-search-terms="ofícios documentos"><a href="https://drive.google.com/drive/u/0/folders/18Tn7oSzviDKGbaJ1t6tD4j-ls7cI_XkH" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-envelope"></i></span>Ofícios</a></div>
-            <div class="link-card" data-search-terms="interdições embargo"><a href="https://drive.google.com/drive/u/0/folders/1Bi1T2D8iNCYQt6pDHVvRXHUM_A-27ejH" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-ban"></i></span>Interdições</a></div>
-            <div class="link-card" data-search-terms="defesas administrativas multa"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-gavel"></i></span>Defesas Adm.</a></div>
-            <div class="link-card" data-search-terms="ministério público mprs"><a href="https://www.mprs.mp.br/atendimento/envio-de-documentos/" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-balance-scale"></i></span>Ministério Público</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/folders/1G7ZNu1UWS6Ctq9rpMZDNN5rabC6QmgJZ" target="_blank"><span class="icon"><i class="fas fa-pen-to-square"></i></span>Auto Imposição Penalidade</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/18Tn7oSzviDKGbaJ1t6tD4j-ls7cI_XkH" target="_blank"><span class="icon"><i class="fas fa-envelope"></i></span>Ofícios</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/1Bi1T2D8iNCYQt6pDHVvRXHUM_A-27ejH" target="_blank"><span class="icon"><i class="fas fa-ban"></i></span>Interdições</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=1156634761" target="_blank"><span class="icon"><i class="fas fa-gavel"></i></span>Def. Adm/Rec.Adm</a></div>
-            <div class="link-card"><a href="https://www.mprs.mp.br/atendimento/envio-de-documentos/" target="_blank"><span class="icon"><i class="fas fa-balance-scale"></i></span>Ministério Público</a></div>
-        </div>
-
-        <div class="category-title">Fiscalização</div>
-        <div class="link-grid">
-            <div class="link-card" data-search-terms="vistorias extraordinárias"><a href="https://docs.google.com/spreadsheets/d/1LKMZxZnEcEMK75BAhQy3aRb444lFBua3imTK4NRc7W0/edit?gid=784303649" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-fire-extinguisher"></i></span>Vistorias Extraordinárias</a></div>
-            <div class="link-card" data-search-terms="denúncias"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1325689788" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-bullhorn"></i></span>Denúncias</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1LKMZxZnEcEMK75BAhQy3aRb444lFBua3imTK4NRc7W0/edit?gid=784303649" target="_blank"><span class="icon"><i class="fas fa-fire-extinguisher"></i></span>Vistorias Extraordinárias</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=1325689788" target="_blank"><span class="icon"><i class="fas fa-fire-extinguisher"></i></span>Denúncias</a></div>
-        </div>
-
-        <div class="category-title">Vistorias</div>
-        <div class="link-grid">
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1050168816" target="_blank"><span class="icon"><i class="fas fa-fire-extinguisher"></i></span>Vistorias Ordinárias</a></div>
-        </div>
-
-        <div class="category-title">Monitoramento e Gestão</div>
-        <div class="link-grid">
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Ps3SbCXKtc6HxBq7HRRGpc8LdaxOYU2RM5pOQgNyIl0/edit?gid=2075238669" target="_blank"><span class="icon"><i class="fa-solid fa-gear"></i></span>Qtd. Análise</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1-swdoWtzm9xaaVy6McltmWna7SGES3imAP0IMay41Tg/edit?gid=1568785467" target="_blank"><span class="icon"><i class="fa-solid fa-inbox"></i></span>Pendências SOL</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=544796145" target="_blank"><span class="icon"><i class="fa-solid fa-balance-scale-right"></i></span>Pend. Def.Adm/Rec.Adm</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=1229427888" target="_blank"><span class="icon"><i class="fa-solid fa-comments"></i></span>Pend. C. Técnicas</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1PiE7zwWCx49a5kYqcgOZdSitjqYWmykmm77w3WFYkgc/edit?gid=583968334" target="_blank"><span class="icon"><i class="fa-solid fa-paperclip"></i></span>Pend. FACT/Rec./Inv.</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1741114177" target="_blank"><span class="icon"><i class="fa-solid fa-building"></i></span>Qtd. APPCI/NCV/CIV</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=1183167623" target="_blank"><span class="icon"><i class="fa-solid fa-route"></i></span>Qtd. Vistorias Ord.</a></div>
-            <div class="link-card"><a href="https://docs.google.com/spreadsheets/d/1r8LuOwvr9jEn1e1_yAiKA_V3R-wTE1kSKvSTxslMGGE/edit?gid=280352508" target="_blank"><span class="icon"><i class="fa-solid fa-triangle-exclamation"></i></span>Vistorias Pendentes</a></div>
-        </div>
-
-        <div class="category-title">Monitoramento</div>
-        <div class="category-title">Apoio Técnico e Normas</div>
-        <div class="link-grid">
-            <div class="link-card" data-search-terms="quantidade análise projetos"><a href="https://docs.google.com/spreadsheets/d/1Ps3SbCXKtc6HxBq7HRRGpc8LdaxOYU2RM5pOQgNyIl0/edit?gid=2075238669" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-chart-bar"></i></span>Qtd. Análise</a></div>
-            <div class="link-card" data-search-terms="pendências sol"><a href="https://docs.google.com/spreadsheets/d/1-swdoWtzm9xaaVy6McltmWna7SGES3imAP0IMay41Tg/edit?gid=1568785467" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-inbox"></i></span>Pendências SOL</a></div>
-            <div class="link-card" data-search-terms="pendências defesas administrativas"><a href="https://docs.google.com/spreadsheets/d/1Bl8fNomC3ZKPTDD5M7RETVKpSZTsHZYW7SR2VXBNXtg/edit?gid=544796145" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-balance-scale"></i></span>Pendências Def/Rec</a></div>
-            <div class="link-card" data-search-terms="pendências consultas tecnicas ct"><a href="https://docs.google.com/spreadsheets/d/1HlFHKWzCOSPO5FxszNSMOVNDfKDAfs5dNw4lSmAf8_g/edit?gid=1229427888" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="fas fa-comments"></i></span>Pendências CT</a></div>
-            <div class="link-card"><a href="https://www.bombeiros.rs.gov.br/legislacao" target="_blank"><span class="icon"><i class="fas fa-scroll"></i></span>Biblioteca Legislação</a></div>
-            <div class="link-card"><a href="https://sisbom.cbm.rs.gov.br/msci/2k16/sistema/nucleobase/webpadwebsite/principal/simulacao_delegaacao.php?gAcao=0" target="_blank"><span class="icon"><i class="fas fa-calculator"></i></span>Simulador de Taxas</a></div>
-            <div class="link-card"><a href="https://drive.google.com/drive/u/0/folders/13oBp9G9E6qQssLKUk8hWyn2bsnDNGM44" target="_blank"><span class="icon"><i class="fas fa-file-alt"></i></span>Orientações DSPCI</a></div>
-        </div>
-
-        <div class="category-title">Contato e Localização</div>
-        <div class="category-title">Contato e Atendimento</div>
-        <div class="link-grid">
-            <div class="link-card contact-card" data-search-terms="endereço localização santa cruz">
-                <a href="https://share.google/cd8jwClKb7aJvgxsk" target="_blank" rel="noopener noreferrer">
-            <div class="link-card contact-card">
-                <a href="https://share.google/cd8jwClKb7aJvgxsk" target="_blank">
-                    <span class="icon"><i class="fas fa-location-dot"></i></span>
-                    <div class="contact-info"><strong>Localização</strong><span>R. Tenente Coronel Brito, 03</span></div>
-                    <div class="contact-details"><strong>ENDEREÇO</strong><p>R. Tenente Coronel Brito, 03 - Santa Cruz do Sul</p></div>
-                </a>
+        <div class="link-card contact-card">
+          <a href="https://wa.me/5551985248047" target="_blank" rel="noopener noreferrer">
+            <span class="icon">💬</span>
+            <div class="contact-details">
+              <strong>WHATSAPP</strong>
+              <p>(51) 98524-8047</p>
             </div>
-            <div class="link-card contact-card" data-search-terms="whatsapp plantão">
-                <a href="https://wa.me/5551985248047" target="_blank" rel="noopener noreferrer">
-            <div class="link-card contact-card">
-                <a href="https://wa.me/5551985248047" target="_blank">
-                    <span class="icon" style="color:#25D366"><i class="fab fa-whatsapp"></i></span>
-                    <div class="contact-info"><strong>WhatsApp Plantão</strong><span>(51) 98524-8047</span></div>
-                    <div class="contact-details"><strong>WHATSAPP</strong><p>(51) 98524-8047</p></div>
-                </a>
-            </div>
-            <div class="link-card contact-card" data-search-terms="email sseg">
-            <div class="link-card contact-card">
-                <a href="mailto:6bbm-dsci@cbm.rs.gov.br">
-                    <span class="icon"><i class="fas fa-envelope"></i></span>
-                    <div class="contact-info"><strong>E-mail SSeg</strong><span>6bbm-dsci@cbm.rs.gov.br</span></div>
-                    <div class="contact-details"><strong>EMAIL</strong><p>6bbm-dsci@cbm.rs.gov.br</p></div>
-                </a>
-            </div>
+          </a>
         </div>
 
-        <div class="impact-phrase">"Segurança contra incêndio: uma responsabilidade de todos."</div>
-        <div class="credits">SSeg - 6º Batalhão de Bombeiro Militar - Santa Cruz do Sul</div>
-        <div class="impact-phrase">"Excelência na Segurança Contra Incêndio"</div>
+        <div class="link-card contact-card">
+          <a href="mailto:6bbm-dsci@cbm.rs.gov.br">
+            <span class="icon">✉️</span>
+            <div class="contact-details">
+              <strong>EMAIL</strong>
+              <p>6bbm-dsci@cbm.rs.gov.br</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="security-note">
+      Página institucional de acessos rápidos. Este site não solicita senha, não coleta dados pessoais, não possui anúncios e não realiza downloads ou instalação de software.
     </div>
 
-    <script>
-        const searchInput = document.getElementById('search-input');
-        const cards = document.querySelectorAll('.link-card');
-        searchInput.addEventListener('input', () => {
-            const term = searchInput.value.toLowerCase();
-            cards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                const searchTerms = card.getAttribute('data-search-terms') || "";
-                card.style.display = (text.includes(term) || searchTerms.toLowerCase().includes(term)) ? "flex" : "none";
-        document.getElementById('search-input').addEventListener('input', function() {
-            const term = this.value.toLowerCase();
-            document.querySelectorAll('.link-card').forEach(card => {
-                card.style.display = card.innerText.toLowerCase().includes(term) ? "flex" : "none";
-            });
+    <div class="impact-phrase">
+      "Excelência na Segurança Contra Incêndio"
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <strong>6º Batalhão de Bombeiro Militar - CBMRS</strong><br>
+    Seção de Segurança Contra Incêndio - Santa Cruz do Sul/RS
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('search-input');
+
+    searchInput.addEventListener('input', filtrarLinks);
+
+    function filtrarLinks() {
+      const termo = searchInput.value.toLowerCase().trim();
+      const secoes = document.querySelectorAll('.category-section');
+
+      secoes.forEach(secao => {
+        const cards = secao.querySelectorAll('.link-card');
+        let encontrouNaSecao = false;
+
+        cards.forEach(card => {
+          const texto = card.innerText.toLowerCase();
+          const corresponde = texto.includes(termo);
+
+          card.classList.toggle('hidden', !corresponde);
+
+          if (corresponde) {
+            encontrouNaSecao = true;
+          }
         });
-    </script>
+
+        secao.classList.toggle('hidden', !encontrouNaSecao);
+      });
+    }
+
+    function limparPesquisa() {
+      searchInput.value = "";
+      filtrarLinks();
+      searchInput.focus();
+    }
+  </script>
+
+</body>
+</html>
